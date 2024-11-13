@@ -1,3 +1,5 @@
+import Producto from "../model/model.js";
+
 let productos = [
   {
     id: 1,
@@ -61,17 +63,19 @@ export const getProductoService = (id) => {
  *
  * @return una respuesta JSON del producto creado.
  */
-export const postProductoService = ({ nombre, precio }) => {
+export const postProductoService = async ({ nombre, precio }) => {
   const producto = {
-    id: productos.length + 1,
+    id: crypto.randomUUID(),
     nombre: nombre,
     precio: precio,
     estado: true,
   };
 
-  productos.push(producto);
+  const nuevoProducto = await Producto.create(producto);
 
-  return producto;
+  productos.push(nuevoProducto);
+
+  return nuevoProducto;
 };
 
 /**

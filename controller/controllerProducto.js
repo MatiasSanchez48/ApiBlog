@@ -49,13 +49,13 @@ export const getProductoController = (req, res) => {
  *
  * @return una respuesta JSON del producto creado.
  */
-export const postProductoController = (req, res) => {
+export const postProductoController = async  (req, res) => {
   try {
     const { nombre, precio } = req.body;
     if (!nombre || !precio) {
       return res.status(400).json({ error: "faltan datos. " + error.message });
     }
-    const producto = postProductoService({ nombre, precio });
+    const producto = await postProductoService({ nombre, precio });
     res.status(200).json({ mensaje: "producto creado", producto: producto });
   } catch (error) {
     return res.status(500).json({ error: error.message });
@@ -101,7 +101,7 @@ export const deleteProductoController = (req, res) => {
  *
  * @return una respuesta JSON del producto eliminado definitivamente.
  */
-export const deleteDefinitivoController = (req, res) => {
+export const deleteDefinitivoController = async (req, res) => {
   try {
     const id = req.params.id;
     const producto = deleteDefinitivoService(id);
