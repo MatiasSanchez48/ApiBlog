@@ -1,5 +1,5 @@
 import express from "express";
-import routerProducto from "./router/router.js";
+import { routerProducto, routerBlog } from "./router/router.js";
 import cors from "cors";
 import dorenv from "dotenv";
 import mongoose from "mongoose";

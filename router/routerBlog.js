@@ -7,7 +7,7 @@ import {
   deleteBlogController,
 } from "../controller/controllerBlog.js";
 
-const routerBlog = express.Router();
+export const routerBlog = express.Router();
 
 routerBlog.get("/", getBlogsController);
 
@@ -18,5 +18,3 @@ routerBlog.post("/", postBlogController);
 routerBlog.put("/:id", putBlogController);
 
 routerBlog.delete("/:id", deleteBlogController);
-
-export default routerBlog;

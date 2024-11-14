@@ -1,3 +1,4 @@
 import { routerProducto } from "./routerProducto.js";
+import { routerBlog } from "./routerBlog.js";
 
-export default routerProducto;
+export  { routerProducto, routerBlog };
