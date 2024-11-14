@@ -13,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/productos", routerProducto);
+app.use("/blog", routerBlog);
 
 mongoose
   .connect(process.env.MONGO_URL)
