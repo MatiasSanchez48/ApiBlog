@@ -1,11 +1,3 @@
-import {
-  getProductoController,
-  postProductoController,
-  getProductosController,
-  putProductoController,
-  deleteDefinitivoController,
-  deleteProductoController,
-} from "./controllerProducto.js";
 
 export {
   getProductoController,
@@ -14,4 +6,4 @@ export {
   putProductoController,
   deleteProductoController,
   deleteDefinitivoController,
-};
+} from "./controllerProducto.js";

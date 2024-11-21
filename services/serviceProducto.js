@@ -42,6 +42,63 @@ export const getProductosService = () => {
   return productos;
 };
 
+export const getProductosPaginadosService = (limit, page) => {
+  //? el limit es la cantidad que quiero que devuelva por pagina.
+  //? ===>
+  //? el page es la pagina que quiero que devuelva.
+  const skip = (page - 1) * limit;
+  productos = productos.Find({ estado: true }).skip(skip).limit(limit);
+  cantidad = productos.Find({ estado: true }).countDocuments();
+  const respuesta = {
+    productos: productos,
+    cantidad: cantidad,
+    cantidadActual: Math.ceil(cantidad / limit),
+    paginaActual: page,
+  };
+  return respuesta;
+};
+export const getProductosFiltradosService = (
+  limit,
+  page,
+  nombre,
+  precioMin,
+  precioMax,
+  orderBy,
+  order
+) => {
+  const filtros = { estado: true };
+  if (nombre) {
+    filtros.nombre = { $regex: nombre, $options: "i" };
+  }
+
+  if (precioMin || precioMax) {
+    filtros.precio = {};
+    if (precioMin) {
+      filtros.precio = { $gte: precioMin };
+    }
+    if (precioMax) {
+      filtros.precio = { $lte: precioMax };
+    }
+  }
+  const sortOptions = {};
+  if (orderBy) {
+    sortOptions[orderBy] = order === "desc" ? -1 : 1;
+  }
+  const skip = (page - 1) * limit;
+  const productos = productos
+    .Find(filtros)
+    .sort(sortOptions)
+    .skip(skip)
+    .limit(limit);
+  const cantidad = productos.Find(filtros).countDocuments();
+  const respuesta = {
+    productos: productos,
+    cantidad: cantidad,
+    cantidadActual: Math.ceil(cantidad / limit),
+    paginaActual: page,
+  };
+  return respuesta;
+};
 /**
  * - Obtiene un producto.
  * Obtiene el producto que coincida con el id de todos los productos.

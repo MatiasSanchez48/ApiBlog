@@ -7,11 +7,15 @@ import {
   putProductoController,
   deleteDefinitivoController,
   deleteProductoController,
+  getProductosPaginadoController,
+  getProductosFiltradosController,
 } from "../controller/controller.js";
 
 export const routerProducto = express.Router();
 
 routerProducto.get("/", getProductosController);
+routerProducto.get("/paginado", getProductosPaginadoController);
+routerProducto.get("/filtrado", getProductosFiltradosController);
 
 routerProducto.get("/:id", getProductoController);
 

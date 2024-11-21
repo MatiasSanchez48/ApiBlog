@@ -1,5 +1,5 @@
 import express from "express";
-import { routerProducto, routerBlog } from "./router/router.js";
+import { routerProducto, routerBlog , routerAutores } from "./router/router.js";
 import cors from "cors";
 import dorenv from "dotenv";
 import mongoose from "mongoose";
@@ -16,6 +16,7 @@ app.use(cors());
 
 app.use("/productos", routerProducto);
 app.use("/blog", routerBlog);
+app.use("/autores", routerAutores);
 //? normalmente esta en /docs
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 

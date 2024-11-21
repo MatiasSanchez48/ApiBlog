@@ -14,6 +14,13 @@ export const getBlogService = (id) => {
   }
   return blog;
 };
+export const getBlogPopuladoService = (id) => {
+  const blog = BlogModel.findById({ id: id }).populate("autor");
+  if (!blog) {
+    return res.status(404).json({ error: "blog no encontrado" });
+  }
+  return blog;
+};
 export const postBlogService = async ({
   titulo,
   descripcion,

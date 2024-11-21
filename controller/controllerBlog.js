@@ -26,6 +26,16 @@ export const getBlogController = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+};export const getBlogPopuladoController = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const blog = await getBlogPopuladoService(id);
+    res
+      .status(200)
+      .json({ status: "success", message: "blog obtenido", data: { blog } });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 export const postBlogController = async (req, res) => {
   try {

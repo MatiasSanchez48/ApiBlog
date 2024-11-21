@@ -5,6 +5,8 @@ import {
   putProductoService,
   deleteDefinitivoService,
   deleteProductoService,
+  getProductosPaginadosService,
+  getProductosFiltradosService,
 } from "../services/services.js";
 
 /**
@@ -27,6 +29,43 @@ export const getProductosController = (req, res) => {
   }
 };
 
+export const getProductosPaginadoController = (req, res) => {
+  try {
+    const { page = 1, limit = 2 } = req.query;
+
+    const productos = getProductosPaginadosService(page, limit);
+    res.status(200).json(productos);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+export const getProductosFiltradosController = (req, res) => {
+  try {
+    const {
+      page = 1,
+      limit = 2,
+      nombre,
+      precioMin,
+      precioMax,
+      orderBy,
+      order,
+    } = req.query;
+
+    const productos = getProductosFiltradosService(
+      page,
+      limit,
+      nombre,
+      precioMin,
+      precioMax,
+      orderBy,
+      order
+    );
+    res.status(200).json(productos);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
 /**
  * - Obtiene un producto.
  * Obtiene el producto que coincida con el id de todos los productos.
@@ -49,7 +88,7 @@ export const getProductoController = (req, res) => {
  *
  * @return una respuesta JSON del producto creado.
  */
-export const postProductoController = async  (req, res) => {
+export const postProductoController = async (req, res) => {
   try {
     const { nombre, precio } = req.body;
     if (!nombre || !precio) {
@@ -105,7 +144,9 @@ export const deleteDefinitivoController = async (req, res) => {
   try {
     const id = req.params.id;
     const producto = deleteDefinitivoService(id);
-    return res.status(200).json({ mensaje: "producto eliminado definitivamente"});
+    return res
+      .status(200)
+      .json({ mensaje: "producto eliminado definitivamente" });
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
