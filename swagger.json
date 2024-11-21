@@ -1,0 +1,505 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API",
+    "version": "1.0.0",
+    "description": "Api simple de blogs"
+  },
+  "paths": {
+    "/blog": {
+      "get": {
+        "tags": ["Blog"],
+        "summary": "Obtiene todos los blogs",
+        "operationId": "getBlogs",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Productos encontrados"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "blogs": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "format": "uuid",
+                                "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
+                              },
+                              "titulo": {
+                                "type": "string",
+                                "example": "Titulo del blog"
+                              },
+                              "descripcion": {
+                                "type": "string",
+                                "example": "Descripcion del blog"
+                              },
+                              "contenido": {
+                                "type": "string",
+                                "example": "Contenido del blog"
+                              },
+                              "imagen": {
+                                "type": "string",
+                                "example": "Imagen del blog"
+                              },
+                              "fechaPublicacion": {
+                                "type": "string",
+                                "format": "date-time",
+                                "example": "2021-01-01T00:00:00.000Z"
+                              },
+                              "isHabilitado": {
+                                "type": "boolean",
+                                "example": true
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Error al obtener los blogs"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Blog"],
+        "summary": "Crea un blog",
+        "operationId": "createBlog",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "titulo": {
+                    "type": "string",
+                    "example": "hola"
+                  },
+                  "descripcion": {
+                    "type": "string",
+                    "example": "descripcion"
+                  },
+                  "contenido": {
+                    "type": "string",
+                    "example": "contenido"
+                  },
+                  "imagen": {
+                    "type": "string",
+                    "example": "imagen"
+                  },
+                  "isHabilitado": {
+                    "type": "boolean",
+                    "example": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Blog creado"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "blog": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "format": "uuid",
+                              "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
+                            },
+                            "titulo": {
+                              "type": "string",
+                              "example": "Titulo del blog"
+                            },
+                            "descripcion": {
+                              "type": "string",
+                              "example": "Descripcion del blog"
+                            },
+                            "contenido": {
+                              "type": "string",
+                              "example": "Contenido del blog"
+                            },
+                            "imagen": {
+                              "type": "string",
+                              "example": "Imagen del blog"
+                            },
+                            "fechaPublicacion": {
+                              "type": "string",
+                              "format": "date-time",
+                              "example": "2021-01-01T00:00:00.000Z"
+                            },
+                            "isHabilitado": {
+                              "type": "boolean",
+                              "example": true
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/blog/{id}": {
+      "get": {
+        "tags": ["Blog"],
+        "summary": "Obtiene un blog",
+        "operationId": "getBlog",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "producto encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Blog encontrado"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "blog": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "format": "uuid",
+                              "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
+                            },
+                            "titulo": {
+                              "type": "string",
+                              "example": "Titulo del blog"
+                            },
+                            "descripcion": {
+                              "type": "string",
+                              "example": "Descripcion del blog"
+                            },
+                            "contenido": {
+                              "type": "string",
+                              "example": "Contenido del blog"
+                            },
+                            "imagen": {
+                              "type": "string",
+                              "example": "Imagen del blog"
+                            },
+                            "fechaPublicacion": {
+                              "type": "string",
+                              "format": "date-time",
+                              "example": "2021-01-01T00:00:00.000Z"
+                            },
+                            "isHabilitado": {
+                              "type": "boolean",
+                              "example": true
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Blog no encontrado"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Error interno del servidor"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Blog"],
+        "summary": "Actualiza un blog",
+        "operationId": "updateBlog",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "titulo": {
+                    "type": "string",
+                    "example": "Titulo del blog"
+                  },
+                  "descripcion": {
+                    "type": "string",
+                    "example": "Descripcion del blog"
+                  },
+                  "contenido": {
+                    "type": "string",
+                    "example": "Contenido del blog"
+                  },
+                  "imagen": {
+                    "type": "string",
+                    "example": "Imagen del blog"
+                  },
+                  "fechaPublicacion": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2021-01-01T00:00:00.000Z"
+                  },
+                  "isHabilitado": {
+                    "type": "boolean",
+                    "example": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "delete": {
+                "tags": ["Blog"],
+                "summary": "Modifica un blog",
+                "operationId": "updateBlog",
+                "responses": {
+                  "200": {
+                    "description": "OK",
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "type": "object",
+                          "properties": {
+                            "status": {
+                              "type": "string",
+                              "example": "success"
+                            },
+                            "message": {
+                              "type": "string",
+                              "example": "Blog actualizado"
+                            },
+                            "data": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                  "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
+                                },
+                                "titulo": {
+                                  "type": "string",
+                                  "example": "Titulo del blog"
+                                },
+                                "descripcion": {
+                                  "type": "string",
+                                  "example": "Descripcion del blog"
+                                },
+                                "contenido": {
+                                  "type": "string",
+                                  "example": "Contenido del blog"
+                                },
+                                "imagen": {
+                                  "type": "string",
+                                  "example": "Imagen del blog"
+                                },
+                                "fechaPublicacion": {
+                                  "type": "string",
+                                  "format": "date-time",
+                                  "example": "2021-01-01T00:00:00.000Z"
+                                },
+                                "isHabilitado": {
+                                  "type": "boolean",
+                                  "example": true
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Blog no encontrado"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Error interno del servidor"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

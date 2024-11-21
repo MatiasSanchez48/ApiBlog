@@ -3,6 +3,8 @@ import { routerProducto, routerBlog } from "./router/router.js";
 import cors from "cors";
 import dorenv from "dotenv";
 import mongoose from "mongoose";
+import swaggerUI from "swagger-ui-express";
+import swaggerDocument from "./swagger.json" assert { type: "json" };
 
 dorenv.config();
 
@@ -14,6 +16,8 @@ app.use(cors());
 
 app.use("/productos", routerProducto);
 app.use("/blog", routerBlog);
+//? normalmente esta en /docs
+app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 mongoose
   .connect(process.env.MONGO_URL)
