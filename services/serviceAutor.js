@@ -1,4 +1,4 @@
-import { AutorModel } from "../model/modelAutores.js";
+import AutorModel from "../model/modelAutores.js";
 
 export const getAutoresService = async () => {
   const autores = await AutorModel.find({ isHabilitado: true });

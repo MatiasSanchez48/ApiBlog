@@ -1,4 +1,3 @@
-
 export {
   getProductoController,
   postProductoController,
@@ -6,4 +5,6 @@ export {
   putProductoController,
   deleteProductoController,
   deleteDefinitivoController,
+  getProductosPaginadoController,
+  getProductosFiltradosController,
 } from "./controllerProducto.js";

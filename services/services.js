@@ -5,6 +5,8 @@ import {
   putProductoService,
   deleteDefinitivoService,
   deleteProductoService,
+  getProductosFiltradosService,
+  getProductosPaginadosService,
 } from "./serviceProducto.js";
 
 export {
@@ -14,4 +16,6 @@ export {
   putProductoService,
   deleteDefinitivoService,
   deleteProductoService,
+  getProductosFiltradosService,
+  getProductosPaginadosService,
 };

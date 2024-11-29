@@ -1,20 +1,30 @@
-/// ejemplo de una validacion entre medio para saber
-/// si un usuario esta logeado o no pase sobre una validacion entre medio.
-/// son llamados middeleware de express van en la carpeta de middleware.
+import jwt from "jsonwebtoken";
 
-export const userLogger = (req, res, next) => {
-  const userLogger = false;
-  if (userLogger) {
+export const authMiddleware = (req, res, next) => {
+  try {
+    const token = req.headers["authorization"];
+
+    if (!token) {
+      return res
+        .status(401)
+        .json({ status: "error", message: "no autorizado", data: {} });
+    }
+
+    tokenData = jwt.verify(
+      token,
+      process.env.JWT_ACCESS_SECRET || "unaclavesecreta"
+    );
+
+    if (!tokenData) {
+      return res
+        .status(401)
+        .json({ status: "error", message: "no autorizado", data: {} });
+    }
+
     next();
-  } else {
-    res.status(401).json({ error: "no autorizado" });
-  }
-};
-export const isAdmin = (req, res, next) => {
-  const isAdmin = false;
-  if (isAdmin) {
-    next();
-  } else {
-    res.status(401).json({ error: "no autorizado" });
+  } catch (error) {
+    res
+      .status(401)
+      .json({ status: "error", message: "no autorizado", data: {} });
   }
 };

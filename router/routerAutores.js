@@ -10,12 +10,12 @@ import {
 
 export const routerAutores = express.Router();
 
-routerBlog.get("/", getAutoresController);
+routerAutores.get("/", getAutoresController);
 
-routerBlog.get("/:id", getAutorController);
+routerAutores.get("/:id", getAutorController);
 
-routerBlog.post("/", postAutorController);
+routerAutores.post("/", postAutorController);
 
-routerBlog.put("/:id", putAutorController);
+routerAutores.put("/:id", putAutorController);
 
-routerBlog.delete("/:id", deleteAutorController);
+routerAutores.delete("/:id", deleteAutorController);

@@ -1,3 +1,4 @@
+import { validationResult } from "express-validator";
 import {
   getProductosService,
   getProductoService,
@@ -90,6 +91,16 @@ export const getProductoController = (req, res) => {
  */
 export const postProductoController = async (req, res) => {
   try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res
+        .status(400)
+        .json({
+          status: "error",
+          message: "faltan datos",
+          error: errors.array(),
+        });
+    }
     const { nombre, precio } = req.body;
     if (!nombre || !precio) {
       return res.status(400).json({ error: "faltan datos. " + error.message });
