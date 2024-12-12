@@ -5,8 +5,13 @@ import {
 } from "../services/serviceUsuario.js";
 export const postRegisterUserController = async (req, res) => {
   try {
-    const { username, password } = req.body;
-    const usuarioCreado = await RegisterUser(username, password);
+    const { username, password, email, fechaNacimiento } = req.body;
+    const usuarioCreado = await RegisterUser(
+      username,
+      password,
+      email,
+      fechaNacimiento
+    );
     if (usuarioCreado === -1) {
       return res
         .status(400)
@@ -22,7 +27,7 @@ export const postRegisterUserController = async (req, res) => {
     res.status(500).json({
       status: "error",
       message: "error al crear el usuario",
-      data: {},
+      data: { error: error.message },
     });
   }
 };
@@ -37,26 +42,31 @@ export const postLoginUserController = async (req, res) => {
         data: {},
       });
     }
-    res
-      .status(200)
-      .json({
-        status: "error",
-        message: "credenciales incorrectas",
-        data: { accessToken, refreshToken },
-      });
-  } catch (error) {}
+    res.status(200).json({
+      status: "success",
+      message: "sesion iniciada",
+      data: { accessToken, refreshToken },
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "error",
+      message: "error al iniciar sesion",
+      data: { error: error.message },
+    });
+  }
 };
 export const postRefreshUserController = async (req, res) => {
   try {
-    const  Refresh  = req.headers["x-refresh-token"];
+    const Refresh = req.headers["x-refresh-token"];
 
     if (!Refresh) {
       return res.status(400).json({
         status: "error",
-        message: "error en el servidor",
+        message: "token no proporcionado",
         data: {},
       });
     }
+
     const accessToken = await RefreshToken(Refresh);
     if (!accessToken) {
       return res.status(400).json({

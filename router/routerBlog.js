@@ -7,6 +7,7 @@ import {
   putBlogController,
   deleteBlogController,
 } from "../controller/controllerBlog.js";
+import { authMiddleware } from "../middleware/authMiddleWare.js";
 
 export const routerBlog = express.Router();
 
@@ -15,8 +16,8 @@ routerBlog.get("/", getBlogsController);
 routerBlog.get("/populado/:id", getBlogPopuladoController);
 routerBlog.get("/:id", getBlogController);
 
-routerBlog.post("/", postBlogController);
+routerBlog.post("/", authMiddleware, postBlogController);
 
-routerBlog.put("/:id", putBlogController);
+routerBlog.put("/:id", authMiddleware, putBlogController);
 
-routerBlog.delete("/:id", deleteBlogController);
+routerBlog.delete("/:id", authMiddleware, deleteBlogController);

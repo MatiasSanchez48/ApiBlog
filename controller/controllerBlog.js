@@ -7,7 +7,6 @@ import {
 } from "../services/serviceBlog.js";
 export const getBlogsController = async (req, res) => {
   try {
-    res.send("blog");
     const blogs = await getBlogsService();
     res
       .status(200)
@@ -26,7 +25,8 @@ export const getBlogController = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-};export const getBlogPopuladoController = async (req, res) => {
+};
+export const getBlogPopuladoController = async (req, res) => {
   try {
     const id = req.params.id;
     const blog = await getBlogPopuladoService(id);
@@ -39,8 +39,8 @@ export const getBlogController = async (req, res) => {
 };
 export const postBlogController = async (req, res) => {
   try {
-    const { titulo, descripcion, contenido, imagen } = req.body;
-    if (!titulo || !descripcion || !contenido || !imagen) {
+    const { titulo, descripcion, contenido, imagen, autor } = req.body;
+    if (!titulo || !descripcion || !contenido || !imagen || !autor) {
       return res.status(400).json({ error: "faltan datos" });
     }
     const nuevoBlog = await postBlogService({
@@ -48,15 +48,18 @@ export const postBlogController = async (req, res) => {
       descripcion,
       contenido,
       imagen,
+      autor,
     });
     if (nuevoBlog) {
-      return res
-        .status(200)
-        .json({ status: "success", message: "blog creado", data: { blog } });
+      return res.status(200).json({
+        status: "success",
+        message: "blog creado",
+        data: { nuevoBlog },
+      });
     } else {
       return res
         .status(400)
-        .json({ status: "error", message: "blog no creado", data: { blog } });
+        .json({ status: "error", message: "blog no creado", data: {} });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });

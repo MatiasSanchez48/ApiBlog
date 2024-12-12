@@ -1,5 +1,7 @@
 import AutorModel from "../model/modelAutores.js";
 
+import crypto from "node:crypto";
+
 export const getAutoresService = async () => {
   const autores = await AutorModel.find({ isHabilitado: true });
   if (autores.length === 0) {
@@ -14,24 +16,10 @@ export const getAutorService = async (id) => {
   }
   return autor;
 };
-export const postAutorService = async (
-  nombre,
-  apellido,
-  nacionalidad,
-  fechaNacimiento,
-  bibliografia,
-  imagen,
-  redSocial
-) => {
+export const postAutorService = async (autorData) => {
   const autor = await AutorModel.create({
     id: crypto.randomUUID(),
-    nombre: nombre,
-    apellido: apellido,
-    nacionalidad: nacionalidad,
-    fechaNacimiento: fechaNacimiento,
-    bibliografia: bibliografia,
-    imagen: imagen,
-    redSocial: redSocial,
+    ...autorData,
     isHabilitado: true,
   });
 

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 export const BlogSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
   titulo: { type: String, required: true },
@@ -7,7 +8,7 @@ export const BlogSchema = new mongoose.Schema({
   imagen: { type: String, required: true },
   fechaPublicacion: { type: Date, default: Date.now },
   isHabilitado: { type: Boolean, default: true },
-  // autor: objetc.id,
+  autor: { type: String, required: true },
 });
 
 const BlogModel = mongoose.model("Blog", BlogSchema);

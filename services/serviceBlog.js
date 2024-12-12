@@ -26,6 +26,7 @@ export const postBlogService = async ({
   descripcion,
   contenido,
   imagen,
+  autor,
 }) => {
   const blog = await BlogModel.create({
     id: crypto.randomUUID(),
@@ -33,6 +34,7 @@ export const postBlogService = async ({
     descripcion: descripcion,
     contenido: contenido,
     imagen: imagen,
+    autor: autor,
   });
   return blog;
 };
@@ -43,25 +45,20 @@ export const putBlogService = async (
   contenido,
   imagen
 ) => {
-  const blog = await BlogModel.findByIdAndUpdate(
-    { id },
-    {
-      titulo,
-      descripcion,
-      contenido,
-      imagen,
-    }
-  );
-  if (!blog) {
+  const blog = await BlogModel.findByIdAndUpdate(id, {
+    titulo,
+    descripcion,
+    contenido,
+    imagen,
+  });
+  const blogActualizado = await BlogModel.findById(id);
+  if (!blogActualizado) {
     return res.status(404).json({ error: "blog no encontrado" });
   }
-  return blog;
+  return blogActualizado;
 };
 export const deleteBlogService = async (id) => {
-  const blog = await BlogModel.findByIdAndUpdate(
-    { id: id },
-    { isHabilitado: false }
-  );
+  const blog = await BlogModel.findByIdAndUpdate(id, { isHabilitado: false });
   if (!blog) {
     return res.status(404).json({ error: "blog no encontrado" });
   }

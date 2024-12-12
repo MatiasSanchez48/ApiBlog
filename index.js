@@ -5,13 +5,13 @@ import {
   routerAutores,
   routerUsuario,
 } from "./router/router.js";
+
 import cors from "cors";
 import dorenv from "dotenv";
 import mongoose from "mongoose";
 import swaggerUI from "swagger-ui-express";
-// import swaggerDocument from "./swagger.json" assert { type: "json" };
-import compression from "compression";
 import { authMiddleware } from "./middleware/authMiddleWare.js";
+import { logger } from "./config/Winston.js";
 
 import fs from "fs";
 
@@ -25,12 +25,16 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "*",
-    allowedHeaders: ["Content-Type", "Authorization", "x-refresh-token"],
-  })
-);
+app.use;
+cors({
+  origin: "*",
+  allowedHeaders: ["Content-Type", "Authorization", "x-refresh-token"],
+});
+
+app.use((req, res, next) => {
+  logger.info(`${req.method} ${req.url}`);
+  next();
+});
 
 app.use("/productos", routerProducto);
 app.use("/blog", routerBlog);
@@ -40,7 +44,7 @@ app.use("/auth", routerUsuario);
 app.use("/protected", authMiddleware, (req, res) => {
   return res
     .status(200)
-    .json({ status: "success", message: "acceso concedido", data: {} });
+    .json({ status: "success", message: "acceso concedido", data: req.user });
 });
 
 //? normalmente esta en /docs la documentacion de las apis usadas en el proyecto

@@ -75,7 +75,11 @@ export const postAutorController = async (req, res) => {
       });
     }
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({
+      status: "error",
+      message: "error al crear el Autor",
+      data: { message: error.message },
+    });
   }
 };
 export const putAutorController = async (req, res) => {
