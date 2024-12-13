@@ -8,7 +8,10 @@ export const BlogSchema = new mongoose.Schema({
   imagen: { type: String, required: true },
   fechaPublicacion: { type: Date, default: Date.now },
   isHabilitado: { type: Boolean, default: true },
-  autor: { type: String, required: true },
+  autor: {
+    type: mongoose.Schema.Types.Mixed,
+    required: true,
+  },
 });
 
 const BlogModel = mongoose.model("Blog", BlogSchema);

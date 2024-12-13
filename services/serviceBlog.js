@@ -28,14 +28,19 @@ export const postBlogService = async ({
   imagen,
   autor,
 }) => {
+  const autorDB = await AutorModel.findOne({ id: autor });
+  if (!autorDB) {
+    throw new Error("El autor no existe en la base de datos.");
+  }
   const blog = await BlogModel.create({
     id: crypto.randomUUID(),
     titulo: titulo,
     descripcion: descripcion,
     contenido: contenido,
     imagen: imagen,
-    autor: autor,
+    autor: autorDB,
   });
+  
   return blog;
 };
 export const putBlogService = async (

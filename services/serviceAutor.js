@@ -18,7 +18,6 @@ export const getAutorService = async (id) => {
 };
 export const postAutorService = async (autorData) => {
   const autor = await AutorModel.create({
-    id: crypto.randomUUID(),
     ...autorData,
     isHabilitado: true,
   });

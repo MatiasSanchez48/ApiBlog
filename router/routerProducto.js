@@ -10,10 +10,16 @@ import {
   getProductosPaginadoController,
   getProductosFiltradosController,
 } from "../controller/controller.js";
-import { body } from "express-validator";
 
 import { brotlimiddleware } from "../middleware/brotlimiddleware.js";
-import { authMiddleware } from "../middleware/authMiddleWare.js";
+import {
+  authMiddleWare,
+  validationMiddleWare,
+} from "../middleware/middleware.js";
+import {
+  validationNameOrSurname,
+  validationPrice,
+} from "../validations/validations.js";
 
 export const routerProducto = express.Router();
 
@@ -34,27 +40,17 @@ routerProducto.get("/:id", getProductoController);
 //Validaciones al crear un producto
 routerProducto.post(
   "/",
-  [
-    body("nombre")
-      .isString()
-      .withMessage("faltan datos.")
-      .isLength({ min: 1, max: 100 })
-      .withMessage("el nombre debe tener entre 1 y 100 caracteres."),
-    body("precio")
-      .isNumeric()
-      .withMessage("faltan datos.")
-      .isLength({ min: 1 }),
-  ], //Despues sallent los errores del req
-  authMiddleware,
+  // [validationNameOrSurname("nombre"), validationPrice],
+  // authMiddleWare,
   postProductoController
 );
 
-routerProducto.put("/:id", authMiddleware, putProductoController);
+routerProducto.put("/:id", authMiddleWare, putProductoController);
 
-routerProducto.delete("/:id", authMiddleware, deleteProductoController);
+routerProducto.delete("/:id", authMiddleWare, deleteProductoController);
 
 routerProducto.delete(
   "/definitivo/:id",
-  authMiddleware,
+  authMiddleWare,
   deleteDefinitivoController
 );

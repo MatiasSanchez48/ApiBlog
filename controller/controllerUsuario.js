@@ -1,3 +1,4 @@
+import { postAutorService } from "../services/serviceAutor.js";
 import {
   RegisterUser,
   LoginUser,
@@ -12,6 +13,26 @@ export const postRegisterUserController = async (req, res) => {
       email,
       fechaNacimiento
     );
+    if (!usuarioCreado) {
+      return res
+        .status(400)
+        .json({
+          status: "error",
+          message: "error al crear el usuario",
+          data: {},
+        });
+    }
+    await postAutorService({
+      id: usuarioCreado.id,
+      nombre: username,
+      fechaNacimiento: fechaNacimiento,
+      apellido: "",
+      nacionalidad: "",
+      bibliografia: "",
+      imagen: "",
+      redSocial: "",
+    });
+
     if (usuarioCreado === -1) {
       return res
         .status(400)
