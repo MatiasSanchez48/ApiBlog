@@ -55,9 +55,11 @@ app.use((req, res) => {
 });
 mongoose
   .connect(process.env.MONGO_URL)
-  .then(() => console.log("conectado a la base de datos DoUw"))
-  .catch((err) => console.log(err));
+  .then(() => {
+    logger.info("conectado a la base de datos");
+  })
+  .catch((err) => logger.error(err));
 
 app.listen(port, () => {
-  console.log("Example app listening on port 3000!");
+  logger.info("Example app listening on port: "+ port);
 });

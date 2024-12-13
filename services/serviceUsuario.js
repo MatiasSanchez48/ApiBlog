@@ -44,8 +44,6 @@ export const LoginUser = async (username, password) => {
     username: usuario.username,
     id: usuario._id,
   });
-  console.log("AccessToken generado:", accessToken);
-  console.log("RefreshToken generado:", refreshToken);
   const usuarioActualizado = await Usuario.findOneAndUpdate({ username });
 
   Usuario.updateOne({ _id: usuarioActualizado._id }, usuario);
