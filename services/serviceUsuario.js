@@ -23,6 +23,8 @@ export const RegisterUser = async (
     email: email,
     fechaNacimiento: fechaNacimiento,
   });
+  console.log(usuarioCreado);
+  
   return usuarioCreado;
 };
 

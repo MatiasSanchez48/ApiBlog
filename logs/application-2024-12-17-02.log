@@ -1,0 +1,92 @@
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:00:48"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:00:49"}
+{"level":"info","message":"PUT /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:00:49"}
+{"level":"info","message":"PUT /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:01:08"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:01:23"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:01:24"}
+{"level":"info","message":"PUT /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:01:26"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:02:02"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:02:03"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:02:12"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:02:12"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:02:18"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:02:18"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:02:20"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:02:21"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:02:22"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:02:22"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:02:25"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:02:25"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:02:31"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:02:31"}
+{"level":"info","message":"PUT /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:02:35"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:02:45"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:02:45"}
+{"level":"info","message":"PUT /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:02:46"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:05:03"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:05:03"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:05:05"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:05:06"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:05:11"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:05:12"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:05:32"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:05:32"}
+{"level":"info","message":"PUT /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:05:33"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:05:47"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:05:47"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:05:59"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:06:00"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:06:03"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:06:04"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:06:23"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:06:24"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:07:03"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:07:04"}
+{"level":"info","message":"PUT /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:07:04"}
+{"level":"info","message":"DELETE /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:07:53"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:01"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:08:02"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:04"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:08:05"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:06"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:07"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:08:07"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:10"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:08:11"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:15"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:08:15"}
+{"level":"info","message":"DELETE /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:08:16"}
+{"level":"info","message":"GET /autores/00ab055d-d9af-4c37-bb1a-6857d243532d","timestamp":"2024-12-17 02:08:26"}
+{"level":"info","message":"GET /autores","timestamp":"2024-12-17 02:08:29"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:37"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:08:37"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:39"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:08:40"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:44"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:45"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:08:46"}
+{"level":"info","message":"DELETE /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:08:47"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:50"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:08:50"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:51"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:08:52"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:08:58"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:08:58"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:09:03"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:09:03"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:09:05"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:09:06"}
+{"level":"info","message":"DELETE /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:09:07"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:09:34"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:09:34"}
+{"level":"info","message":"DELETE /autores/57634326-f1d5-4639-931b-ca27d2c3ccf8","timestamp":"2024-12-17 02:09:44"}
+{"level":"info","message":"GET /autores","timestamp":"2024-12-17 02:09:47"}
+{"level":"info","message":"POST /autores","timestamp":"2024-12-17 02:09:54"}
+{"level":"info","message":"DELETE /autores/e1316952-ab49-4204-8c79-f2f21b25e539","timestamp":"2024-12-17 02:10:01"}
+{"level":"info","message":"GET /blog/","timestamp":"2024-12-17 02:15:39"}
+{"level":"info","message":"GET /blog/96f23e91-3c89-4f5e-8364-c34db1bbc0fd","timestamp":"2024-12-17 02:15:41"}
+{"level":"info","message":"POST /blog/","timestamp":"2024-12-17 02:15:45"}
+{"level":"info","message":"PUT /blog/96f23e91-3c89-4f5e-8364-c34db1bbc0fd","timestamp":"2024-12-17 02:16:00"}
+{"level":"info","message":"GET /blog/","timestamp":"2024-12-17 02:30:01"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-17 02:36:13"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-17 02:36:14"}

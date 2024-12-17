@@ -21,27 +21,27 @@ import {
  *
  * @return una respuesta JSON con todos los productos.
  */
-export const getProductosController = (req, res) => {
+export const getProductosController = async (req, res) => {
   try {
-    const productos = getProductosService();
+    const productos = await getProductosService();
     res.status(200).json(productos);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
 };
 
-export const getProductosPaginadoController = (req, res) => {
+export const getProductosPaginadoController = async (req, res) => {
   try {
     const { page = 1, limit = 2 } = req.query;
 
-    const productos = getProductosPaginadosService(page, limit);
+    const productos = await getProductosPaginadosService(page, limit);
     res.status(200).json(productos);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
 };
 
-export const getProductosFiltradosController = (req, res) => {
+export const getProductosFiltradosController = async (req, res) => {
   try {
     const {
       page = 1,
@@ -53,7 +53,7 @@ export const getProductosFiltradosController = (req, res) => {
       order,
     } = req.query;
 
-    const productos = getProductosFiltradosService(
+    const productos = await getProductosFiltradosService(
       page,
       limit,
       nombre,
@@ -62,6 +62,7 @@ export const getProductosFiltradosController = (req, res) => {
       orderBy,
       order
     );
+    console.log(productos);
     res.status(200).json(productos);
   } catch (error) {
     return res.status(500).json({ error: error.message });
@@ -73,11 +74,11 @@ export const getProductosFiltradosController = (req, res) => {
  *
  * @return una respuesta JSON del producto.
  */
-export const getProductoController = (req, res) => {
+export const getProductoController = async (req, res) => {
   try {
     const id = req.params.id;
-    const productos = getProductoService(id);
-    return res.status(200).json(productos);
+    const producto = await getProductoService(id);
+    return res.status(200).json(producto);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
@@ -116,11 +117,11 @@ export const postProductoController = async (req, res) => {
  *
  * @return una respuesta JSON del producto editado/modificado.
  */
-export const putProductoController = (req, res) => {
+export const putProductoController = async (req, res) => {
   try {
     const id = req.params.id;
     const { nombre, precio } = req.body;
-    const producto = putProductoService(id, nombre, precio);
+    const producto = await putProductoService(id, nombre, precio);
     res.status(200).json({ mensaje: "producto editado", producto: producto });
   } catch (error) {
     return res.status(500).json({ error: error.message });
@@ -133,10 +134,10 @@ export const putProductoController = (req, res) => {
  *
  * @return una respuesta JSON del producto eliminado.
  */
-export const deleteProductoController = (req, res) => {
+export const deleteProductoController = async (req, res) => {
   try {
     const id = req.params.id;
-    const producto = deleteProductoService(id);
+    const producto = await deleteProductoService(id);
     res.status(200).json({ mensaje: "producto eliminado", producto: producto });
   } catch (error) {
     return res.status(500).json({ error: error.message });
@@ -152,7 +153,7 @@ export const deleteProductoController = (req, res) => {
 export const deleteDefinitivoController = async (req, res) => {
   try {
     const id = req.params.id;
-    const producto = deleteDefinitivoService(id);
+    const producto = await deleteDefinitivoService(id);
     return res
       .status(200)
       .json({ mensaje: "producto eliminado definitivamente" });

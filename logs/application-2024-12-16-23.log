@@ -1,0 +1,239 @@
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:32:32"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:32:33"}
+{"level":"info","message":"GET /productos","timestamp":"2024-12-16 23:34:01"}
+{"level":"info","message":"GET /productos?limit=10&page=1&nombre=camisa&precioMin=100&precioMax=500&orderBy=precio&order=asc","timestamp":"2024-12-16 23:34:07"}
+{"level":"info","message":"GET /productos?limit=3&page=1&nombre=camisa&precioMin=100&precioMax=500&orderBy=precio&order=asc","timestamp":"2024-12-16 23:34:14"}
+{"level":"info","message":"GET /productos?limit=2&page=1&nombre=camisa&precioMin=100&precioMax=500&orderBy=precio&order=asc","timestamp":"2024-12-16 23:34:25"}
+{"level":"info","message":"GET /productos?limit=2&page=1&nombre=camisa&precioMin=0&precioMax=0&orderBy=precio&order=asc","timestamp":"2024-12-16 23:34:37"}
+{"level":"info","message":"GET /productos?limit=2&page=2&nombre=camisa&precioMin=0&precioMax=0&orderBy=precio&order=asc","timestamp":"2024-12-16 23:34:47"}
+{"level":"info","message":"GET /productos?limit=1&page=2&nombre=camisa&precioMin=0&precioMax=0&orderBy=precio&order=asc","timestamp":"2024-12-16 23:34:53"}
+{"level":"info","message":"GET /productos?limit=1&page=2&nombre=camisa&order=asc","timestamp":"2024-12-16 23:35:00"}
+{"level":"info","message":"GET /productos?limit=1&page=2&order=asc","timestamp":"2024-12-16 23:35:02"}
+{"level":"info","message":"GET /productos?order=asc","timestamp":"2024-12-16 23:35:07"}
+{"level":"info","message":"GET /productos/filtrado?order=asc","timestamp":"2024-12-16 23:35:30"}
+{"level":"info","message":"GET /productos/filtrado?limit=1&page=2&order=asc","timestamp":"2024-12-16 23:35:34"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:35:50"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:36:57"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:36:58"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:36:58"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:36:59"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:37:00"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:37:04"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:37:09"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:37:10"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:37:12"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:37:12"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:37:12"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:37:47"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:37:48"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:37:51"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:37:51"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:38:58"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:39:35"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:40:57"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:40:59"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:41:01"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:41:11"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:41:11"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:41:13"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:41:15"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:41:17"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:41:17"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:41:19"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:41:19"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:41:20"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:41:22"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:41:22"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:41:23"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:41:43"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:41:44"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:41:44"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:42:08"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:42:08"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:42:09"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:42:21"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:42:22"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:42:23"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:42:24"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:42:24"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:42:25"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:42:26"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:42:27"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:42:30"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:42:31"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:42:32"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:42:36"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:42:38"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:43:00"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:43:01"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:43:04"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:43:12"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:43:13"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:43:16"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:43:16"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:43:17"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:43:57"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:43:57"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:44:00"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:44:03"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:44:06"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:44:07"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:44:07"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:44:22"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:44:23"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:44:39"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:44:39"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:44:49"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:44:50"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:44:51"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:44:51"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:44:59"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:45:00"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:45:03"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:46:01"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:46:02"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:46:03"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:46:03"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:46:19"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:46:54"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:46:55"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:46:57"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:46:57"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:47:09"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:47:10"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:47:12"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:47:12"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:47:14"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:47:36"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:47:37"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:47:46"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:47:52"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:47:53"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:47:58"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:47:59"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:48:02"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:48:06"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:48:06"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:48:15"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:48:15"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:48:16"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:48:23"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:48:23"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:48:24"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:48:50"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:48:51"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:48:51"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:49:29"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:49:30"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:49:35"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:49:44"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:49:44"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:49:45"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:49:53"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:49:53"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:50:41"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:50:43"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:51:14"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:51:16"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:51:16"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:51:18"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:52:22"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:52:23"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:52:29"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:52:34"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:52:48"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:52:49"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:52:49"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:52:53"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:52:54"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:52:59"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:52:59"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:53:08"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:53:09"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:53:21"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:53:21"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:53:27"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:53:28"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:53:32"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:53:33"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:53:35"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:53:35"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:53:38"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:53:49"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:53:49"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:53:50"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:54:12"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:54:13"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:54:13"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:54:30"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:54:31"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:54:35"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:54:35"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:54:36"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:54:41"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:54:41"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:54:45"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:54:46"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:54:51"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:54:51"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:54:53"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:54:53"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:54:54"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:55:01"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:55:02"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:55:06"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:55:07"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:55:12"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:55:12"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:55:14"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:55:17"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:55:18"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:55:31"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:55:32"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:55:48"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:55:48"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:55:49"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:55:58"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:55:59"}
+{"level":"info","message":"GET /productos/filtrado","timestamp":"2024-12-16 23:55:59"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:56:00"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:56:00"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:56:10"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:56:11"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:56:21"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:56:21"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:56:24"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:56:25"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:56:27"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:56:28"}
+{"level":"info","message":"GET /productos/paginado","timestamp":"2024-12-16 23:57:37"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:57:47"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:57:51"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:57:52"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:57:57"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:57:57"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:57:59"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:58:00"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:58:00"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:58:01"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:58:02"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:58:02"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:58:04"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:58:04"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:58:06"}
+{"level":"info","message":"GET /productos/paginado","timestamp":"2024-12-16 23:58:07"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:58:07"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:58:11"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:58:12"}
+{"level":"info","message":"GET /productos/paginado","timestamp":"2024-12-16 23:58:13"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:58:21"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:58:22"}
+{"level":"info","message":"GET /productos/paginado","timestamp":"2024-12-16 23:58:24"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:58:31"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:58:31"}
+{"level":"info","message":"GET /productos/paginado","timestamp":"2024-12-16 23:58:34"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:58:52"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:58:52"}
+{"level":"info","message":"GET /productos/paginado","timestamp":"2024-12-16 23:58:54"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-16 23:59:57"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-16 23:59:58"}

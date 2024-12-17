@@ -8,7 +8,7 @@ import {
 export const getBlogsController = async (req, res) => {
   try {
     const blogs = await getBlogsService();
-    res
+    return res
       .status(200)
       .json({ status: "success", message: "blogs obtenidos", data: { blogs } });
   } catch (error) {

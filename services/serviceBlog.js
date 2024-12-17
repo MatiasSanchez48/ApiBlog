@@ -1,17 +1,19 @@
 import BlogModel from "../model/modelBlog.js";
+import AutorModel from "../model/modelAutores.js";
 
 export const getBlogsService = async () => {
   const blogs = await BlogModel.find({ isHabilitado: true });
   if (blogs.length === 0) {
-    return res.status(404).json({ error: "blogs no encontrados" });
+    return [];
   }
   return blogs;
 };
-export const getBlogService = (id) => {
-  const blog = BlogModel.findById(id);
+export const getBlogService = async (id) => {
+  const blog = await BlogModel.findOne({ id: id });
   if (!blog) {
     return res.status(404).json({ error: "blog no encontrado" });
   }
+
   return blog;
 };
 export const getBlogPopuladoService = (id) => {
@@ -40,7 +42,7 @@ export const postBlogService = async ({
     imagen: imagen,
     autor: autorDB,
   });
-  
+
   return blog;
 };
 export const putBlogService = async (
@@ -50,20 +52,29 @@ export const putBlogService = async (
   contenido,
   imagen
 ) => {
-  const blog = await BlogModel.findByIdAndUpdate(id, {
-    titulo,
-    descripcion,
-    contenido,
-    imagen,
-  });
-  const blogActualizado = await BlogModel.findById(id);
-  if (!blogActualizado) {
+  const blog = await BlogModel.findOneAndUpdate(
+    { id: id },
+    {
+      titulo,
+      descripcion,
+      contenido,
+      imagen,
+    },
+    {
+      new: true,
+    }
+  );
+  if (!blog) {
     return res.status(404).json({ error: "blog no encontrado" });
   }
-  return blogActualizado;
+  return blog;
 };
 export const deleteBlogService = async (id) => {
-  const blog = await BlogModel.findByIdAndUpdate(id, { isHabilitado: false });
+  const blog = await BlogModel.findOneAndUpdate(
+    { id: id },
+    { isHabilitado: false },
+    { new: true }
+  );
   if (!blog) {
     return res.status(404).json({ error: "blog no encontrado" });
   }

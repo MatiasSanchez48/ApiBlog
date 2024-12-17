@@ -10,6 +10,7 @@ export const BlogSchema = new mongoose.Schema({
   isHabilitado: { type: Boolean, default: true },
   autor: {
     type: mongoose.Schema.Types.Mixed,
+    ref: "Autor",
     required: true,
   },
 });

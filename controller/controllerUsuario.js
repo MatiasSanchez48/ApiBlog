@@ -13,16 +13,22 @@ export const postRegisterUserController = async (req, res) => {
       email,
       fechaNacimiento
     );
-    if (!usuarioCreado) {
-      return res
-        .status(400)
-        .json({
-          status: "error",
-          message: "error al crear el usuario",
-          data: {},
-        });
+    if (usuarioCreado === -1) {
+      return res.status(400).json({
+        status: "error",
+        message: "El usuario ya existe",
+        data: { usuarioCreado: usuarioCreado },
+      });
     }
-    await postAutorService({
+    if (!usuarioCreado) {
+      return res.status(400).json({
+        status: "error",
+        message: "error al crear el usuario",
+        data: {},
+      });
+    }
+
+    const autor = await postAutorService({
       id: usuarioCreado.id,
       nombre: username,
       fechaNacimiento: fechaNacimiento,
@@ -33,16 +39,10 @@ export const postRegisterUserController = async (req, res) => {
       redSocial: "",
     });
 
-    if (usuarioCreado === -1) {
-      return res
-        .status(400)
-        .json({ status: "error", message: "el usuario ya existe", data: {} });
-    }
-
     res.status(200).json({
       status: "success",
       message: "usuario creado",
-      data: { usuarioCreado },
+      data: { usuarioCreado: usuarioCreado, autor: autor },
     });
   } catch (error) {
     res.status(500).json({

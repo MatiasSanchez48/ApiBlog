@@ -1,31 +1,4 @@
-import Producto from "../model/model.js";
-
-let productos = [
-  {
-    id: 1,
-    nombre: "producto1",
-    precio: 100,
-    estado: true,
-  },
-  {
-    id: 2,
-    nombre: "producto2",
-    precio: 200,
-    estado: true,
-  },
-  {
-    id: 3,
-    nombre: "producto3",
-    precio: 300,
-    estado: true,
-  },
-  {
-    id: 4,
-    nombre: "producto4",
-    precio: 400,
-    estado: true,
-  },
-];
+import Producto from "../model/modelProducto.js";
 
 /**
  * Controller de productos.
@@ -38,17 +11,19 @@ let productos = [
  *
  * @return una respuesta JSON con todos los productos.
  */
-export const getProductosService = () => {
-  return productos;
+export const getProductosService = async () => {
+  return await Producto.find({ estado: true });
 };
 
-export const getProductosPaginadosService = (limit, page) => {
+export const getProductosPaginadosService = async (limit, page) => {
   //? el limit es la cantidad que quiero que devuelva por pagina.
   //? ===>
   //? el page es la pagina que quiero que devuelva.
   const skip = (page - 1) * limit;
-  productos = productos.Find({ estado: true }).skip(skip).limit(limit);
-  cantidad = productos.Find({ estado: true }).countDocuments();
+  const productos = await Producto.find({ estado: true })
+    .skip(skip)
+    .limit(limit);
+  const cantidad = await Producto.find({ estado: true }).countDocuments();
   const respuesta = {
     productos: productos,
     cantidad: cantidad,
@@ -57,7 +32,7 @@ export const getProductosPaginadosService = (limit, page) => {
   };
   return respuesta;
 };
-export const getProductosFiltradosService = (
+export const getProductosFiltradosService = async (
   limit,
   page,
   nombre,
@@ -66,38 +41,42 @@ export const getProductosFiltradosService = (
   orderBy,
   order
 ) => {
-  const filtros = { estado: true };
-  if (nombre) {
-    filtros.nombre = { $regex: nombre, $options: "i" };
-  }
+  try {
+    const filtros = { estado: true };
+    if (nombre) {
+      filtros.nombre = { $regex: nombre, $options: "i" };
+    }
 
-  if (precioMin || precioMax) {
-    filtros.precio = {};
-    if (precioMin) {
-      filtros.precio = { $gte: precioMin };
+    if (precioMin || precioMax) {
+      filtros.precio = {};
+      if (precioMin) {
+        filtros.precio = { $gte: precioMin };
+      }
+      if (precioMax) {
+        filtros.precio = { $lte: precioMax };
+      }
     }
-    if (precioMax) {
-      filtros.precio = { $lte: precioMax };
+    const sortOptions = {};
+    if (orderBy) {
+      sortOptions[orderBy] = order === "desc" ? -1 : 1;
     }
+    const skip = (page - 1) * limit;
+    const productosFiltrados = await Producto.find(filtros)
+      .sort(sortOptions)
+      .skip(skip)
+      .limit(limit);
+    const cantidad = await Producto.find(filtros).countDocuments();
+    const respuesta = {
+      productos: productosFiltrados,
+      cantidad: cantidad,
+      cantidadActual: Math.ceil(cantidad / limit),
+      paginaActual: page,
+    };
+
+    return respuesta;
+  } catch (error) {
+    return new Error("Error al filtrar los productos: " + error.message);
   }
-  const sortOptions = {};
-  if (orderBy) {
-    sortOptions[orderBy] = order === "desc" ? -1 : 1;
-  }
-  const skip = (page - 1) * limit;
-  const productos = productos
-    .Find(filtros)
-    .sort(sortOptions)
-    .skip(skip)
-    .limit(limit);
-  const cantidad = productos.Find(filtros).countDocuments();
-  const respuesta = {
-    productos: productos,
-    cantidad: cantidad,
-    cantidadActual: Math.ceil(cantidad / limit),
-    paginaActual: page,
-  };
-  return respuesta;
 };
 /**
  * - Obtiene un producto.
@@ -105,11 +84,12 @@ export const getProductosFiltradosService = (
  *
  * @return una respuesta JSON del producto.
  */
-export const getProductoService = (id) => {
-  const producto = productos.find((p) => p.id == id);
+export const getProductoService = async (id) => {
+  const producto = await Producto.findOne({ id: id });
   if (!producto) {
     return res.status(404).json({ error: "producto no encontrado" });
   }
+
   return producto;
 };
 
@@ -130,8 +110,6 @@ export const postProductoService = async ({ nombre, precio }) => {
 
   const nuevoProducto = await Producto.create(producto);
 
-  productos.push(nuevoProducto);
-
   return nuevoProducto;
 };
 
@@ -142,12 +120,17 @@ export const postProductoService = async ({ nombre, precio }) => {
  *
  * @return una respuesta JSON del producto editado/modificado.
  */
-export const putProductoService = (id, nombre, precio) => {
-  const producto = productos.find((p) => p.id == id);
-  producto.nombre = nombre;
-  producto.precio = precio;
-
-  return producto;
+export const putProductoService = async (id, nombre, precio) => {
+  const producto = await Producto.findOne({ id: id });
+  const productoModificado = await Producto.findByIdAndUpdate(
+    producto._id,
+    {
+      nombre: nombre,
+      precio: precio,
+    },
+    { new: true }
+  );
+  return productoModificado;
 };
 
 /**
@@ -156,10 +139,19 @@ export const putProductoService = (id, nombre, precio) => {
  *
  * @return una respuesta JSON del producto eliminado.
  */
-export const deleteProductoService = (id) => {
-  const producto = productos.find((p) => p.id == id);
-  producto.estado = false;
-  return producto;
+export const deleteProductoService = async (id) => {
+  const producto = await Producto.findOne({ id: id });
+  if (!producto) {
+    return { error: "Producto no encontrado" };
+  }
+
+  const productoModificado = await Producto.findByIdAndUpdate(
+    producto._id,
+    { estado: false },
+    { new: true }
+  );
+
+  return productoModificado;
 };
 
 /**
@@ -168,9 +160,16 @@ export const deleteProductoService = (id) => {
  *
  * @return una respuesta JSON del producto eliminado definitivamente.
  */
-export const deleteDefinitivoService = (id) => {
-  const producto = productos.find((p) => p.id == id);
-  productos = productos.filter((p) => p.id != id);
+export const deleteDefinitivoService = async (id) => {
+  const producto = await Producto.findOne({ id: id });
+  if (!producto) {
+    return { error: "Producto no encontrado" };
+  }
 
-  return producto;
+  const productoEliminado = await Producto.findByIdAndDelete(producto._id);
+
+  if (!productoEliminado) {
+    return { error: "No se pudo eliminar el producto" };
+  }
+  return productoEliminado;
 };

@@ -85,7 +85,7 @@ export const postAutorController = async (req, res) => {
 export const putAutorController = async (req, res) => {
   try {
     const id = req.params.id;
-    const autorModificado = ({
+    const {
       nombre,
       apellido,
       nacionalidad,
@@ -93,11 +93,28 @@ export const putAutorController = async (req, res) => {
       bibliografia,
       imagen,
       redSocial,
-    } = req.body);
-    const autor = await putAutorService({
-      id,
-      autorModificado,
-    });
+    } = req.body;
+    if (
+      !nombre ||
+      !apellido ||
+      !nacionalidad ||
+      !fechaNacimiento ||
+      !bibliografia ||
+      !imagen ||
+      !redSocial
+    ) {
+      return res.status(400).json({ error: "Faltan campos obligatorios" });
+    }
+    const autorModificado = {
+      nombre,
+      apellido,
+      nacionalidad,
+      fechaNacimiento,
+      bibliografia,
+      imagen,
+      redSocial,
+    };
+    const autor = await putAutorService(id, autorModificado);
     res
       .status(200)
       .json({ status: "success", message: "autor editado", data: { autor } });
@@ -112,7 +129,7 @@ export const deleteAutorController = async (req, res) => {
     if (!autor) {
       return res.status(404).json({ error: "autor no encontrado" });
     } else {
-      res.status(200).json({
+      return res.status(200).json({
         status: "success",
         message: "autor eliminado",
         data: { autor },
