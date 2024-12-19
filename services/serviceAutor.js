@@ -3,50 +3,90 @@ import AutorModel from "../model/modelAutores.js";
 import crypto from "node:crypto";
 
 export const getAutoresService = async () => {
-  const autores = await AutorModel.find({ isHabilitado: true });
-  if (autores.length === 0) {
-    return res.status(404).json({ error: "autores no encontrados" });
+  try {
+    const autores = await AutorModel.find({ isHabilitado: true });
+    if (autores.length === 0) {
+      return res
+        .status(404)
+        .json({ status: 404, error: "autores no encontrados", data: {} });
+    }
+    return autores;
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
   }
-  return autores;
 };
 export const getAutorService = async (id) => {
-  const autor = await AutorModel.findOne({ id: id });
-  if (!autor) {
-    return res.status(404).json({ error: "autor no encontrado" });
+  try {
+    const autor = await AutorModel.findOne({ id: id });
+    if (!autor) {
+      return res
+        .status(404)
+        .json({ status: 404, error: "autor no encontrado", data: {} });
+    }
+    return autor;
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
   }
-  return autor;
 };
 export const postAutorService = async (autorData) => {
-  if (
-    autorData.id === "" ||
-    autorData.id === undefined ||
-    autorData.id === null
-  ) {
-    autorData.id = crypto.randomUUID();
-  }
-  const autor = await AutorModel.create({
-    ...autorData,
-    isHabilitado: true,
-  });
+  try {
+    if (
+      autorData.id === "" ||
+      autorData.id === undefined ||
+      autorData.id === null
+    ) {
+      autorData.id = crypto.randomUUID();
+    }
+    const autor = await AutorModel.create({
+      ...autorData,
+      isHabilitado: true,
+    });
 
-  return autor;
+    return autor;
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
+  }
 };
 export const putAutorService = async (id, autor) => {
-  console.log(id, autor);
+  try {
+    console.log(id, autor);
 
-  const autorModificado = await AutorModel.findOneAndUpdate({ id: id }, autor, {
-    new: true,
-  });
-  return autorModificado;
+    const autorModificado = await AutorModel.findOneAndUpdate(
+      { id: id },
+      autor,
+      {
+        new: true,
+      }
+    );
+    return autorModificado;
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
+  }
 };
 export const deleteAutorService = async (id) => {
-  const autor = await AutorModel.findOneAndUpdate(
-    { id: id },
-    { isHabilitado: false },
-    { new: true }
-  );
-  if (!autor) {
-    return res.status(404).json({ error: "autor no encontrado" });
+  try {
+    const autor = await AutorModel.findOneAndUpdate(
+      { id: id },
+      { isHabilitado: false },
+      { new: true }
+    );
+    if (!autor) {
+      return res
+        .status(404)
+        .json({ status: 404, error: "autor no encontrado", data: {} });
+    }
+    return autor;
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
   }
-  return autor;
 };

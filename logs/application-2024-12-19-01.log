@@ -1,0 +1,269 @@
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:01:02"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:01:02"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:02:35"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:02:36"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:02:51"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:02:51"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:02:54"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:02:54"}
+{"level":"info","message":"GET /productos","timestamp":"2024-12-19 01:03:10"}
+{"level":"info","message":"GET /favicon.ico","timestamp":"2024-12-19 01:03:11"}
+{"level":"info","message":"GET /docs","timestamp":"2024-12-19 01:03:23"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:03:23"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:03:23"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:03:23"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:03:23"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:03:23"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:03:24"}
+{"level":"info","message":"GET /productos","timestamp":"2024-12-19 01:03:56"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:31:34"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:31:35"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:31:37"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:31:38"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:31:40"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:31:40"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:31:43"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:31:44"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:31:44"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:31:46"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:31:46"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:31:46"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:31:46"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:31:46"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:31:46"}
+{"level":"info","message":"GET /blog","timestamp":"2024-12-19 01:31:57"}
+{"level":"info","message":"GET /blog","timestamp":"2024-12-19 01:32:03"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:33:16"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:33:17"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:33:21"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:33:21"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:33:27"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:33:28"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:33:34"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:33:35"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:33:49"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:33:50"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:33:51"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:33:51"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:33:51"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:33:51"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:33:51"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:33:51"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:36:43"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:36:44"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:36:45"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:36:46"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:36:46"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:36:46"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:36:46"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:36:46"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:36:46"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:37:52"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:37:53"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:37:54"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:37:56"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:37:56"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:37:56"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:37:56"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:37:56"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:37:56"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:37:58"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:37:58"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:37:58"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:37:58"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:37:58"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:37:58"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:37:58"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:39:11"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:39:12"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:39:13"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:39:14"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:39:15"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:39:16"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:39:17"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:39:18"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:39:20"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:39:21"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:39:22"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:39:23"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:39:23"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:39:23"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:39:23"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:39:23"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:39:23"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:39:23"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:39:24"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:39:24"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:39:24"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:39:24"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:39:24"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:39:24"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:45:59"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:45:59"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:46:00"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:46:00"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:46:00"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:46:00"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:46:00"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:46:00"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:46:06"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:46:06"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:46:07"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:46:07"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:46:07"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:46:07"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:46:07"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:46:07"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:47:11"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:47:12"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:47:48"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:47:49"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:47:50"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:47:51"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:47:52"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:47:52"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:47:52"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:47:52"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:47:52"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:47:52"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:48:11"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:48:11"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:48:13"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:48:13"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:48:15"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:48:15"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:48:15"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:48:15"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:48:15"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:48:15"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:49:43"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:49:44"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:50:05"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:50:05"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:50:07"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:50:07"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:50:07"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:50:07"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:50:07"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:50:07"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:50:18"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:50:19"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:50:22"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:50:23"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:50:26"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:50:27"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:50:32"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:50:33"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:50:37"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:50:38"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:50:40"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:50:41"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:50:41"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:50:44"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:50:45"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:50:45"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:50:45"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:50:45"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:50:45"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:50:45"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:50:45"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:51:10"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:51:10"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:51:12"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:51:13"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:51:16"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:51:17"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:51:20"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:51:20"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:51:20"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:51:20"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:51:20"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:51:20"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:51:39"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:51:40"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:54:24"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:54:25"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:54:26"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:54:26"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:54:26"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:54:26"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:54:26"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:54:27"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:54:35"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:54:35"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:54:38"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:54:38"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:54:44"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:54:45"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:54:49"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:54:49"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:54:51"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:54:52"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:54:53"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:54:54"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:54:56"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:54:57"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:54:59"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:54:59"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:55:00"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:55:00"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:55:01"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:55:01"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:55:01"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:55:01"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:55:01"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:55:01"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:55:19"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:55:20"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:55:24"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:55:24"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:55:28"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:55:29"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:55:35"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:55:35"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:55:39"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:55:39"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:55:50"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:55:50"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:55:53"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:55:53"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:56:09"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:56:10"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:56:17"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:56:18"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:56:22"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:56:23"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:56:24"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:56:24"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:56:24"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:56:24"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:56:24"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:56:24"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:57:07"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:57:08"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:57:10"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:57:10"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:57:10"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:57:10"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:57:10"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:57:10"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:57:30"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:57:31"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:57:32"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:57:32"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:57:32"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:57:33"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:57:33"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:57:33"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:57:33"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:57:33"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:58:37"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:58:37"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 01:58:44"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 01:58:45"}
+{"level":"info","message":"GET /docs/","timestamp":"2024-12-19 01:58:48"}
+{"level":"info","message":"GET /docs/swagger-ui.css","timestamp":"2024-12-19 01:58:48"}
+{"level":"info","message":"GET /docs/swagger-ui-bundle.js","timestamp":"2024-12-19 01:58:48"}
+{"level":"info","message":"GET /docs/swagger-ui-init.js","timestamp":"2024-12-19 01:58:48"}
+{"level":"info","message":"GET /docs/swagger-ui-standalone-preset.js","timestamp":"2024-12-19 01:58:48"}
+{"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 01:58:48"}

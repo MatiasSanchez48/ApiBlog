@@ -1,10 +1,10 @@
-export const validationMiddleWare = (req, res, next) => {
+import { validationResult } from "express-validator";
+export const handleValidationErrors = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(400).json({
-      status: "error",
-      message: "faltan datos",
-      error: errors.array(),
-    });
+    return res
+      .status(400)
+      .json({ status: 400, errors: errors.array(), data: {} });
   }
+  next();
 };

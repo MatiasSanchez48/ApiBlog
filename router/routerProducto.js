@@ -12,45 +12,71 @@ import {
 } from "../controller/controller.js";
 
 import { brotlimiddleware } from "../middleware/brotlimiddleware.js";
+import { authMiddleWare } from "../middleware/middleware.js";
 import {
-  authMiddleWare,
-  validationMiddleWare,
-} from "../middleware/middleware.js";
-import {
-  validationNameOrSurname,
-  validationPrice,
-} from "../validations/validations.js";
+  deleteProductoValidation,
+  getProductoValidation,
+  postProductoValidation,
+  putProductoValidation,
+  getProductosPaginadosValidation,
+  getProductosFiltradosValidation,
+} from "../validations/validationsProducto.js";
+import { handleValidationErrors } from "../middleware/validationMiddleWare.js";
 
 export const routerProducto = express.Router();
 
 routerProducto.get("/", brotlimiddleware, getProductosController);
 routerProducto.get(
   "/paginado",
+  getProductosPaginadosValidation,
+  handleValidationErrors,
   brotlimiddleware,
   getProductosPaginadoController
 );
+
 routerProducto.get(
   "/filtrado",
+  getProductosFiltradosValidation,
+  handleValidationErrors,
   brotlimiddleware,
   getProductosFiltradosController
 );
 
-routerProducto.get("/:id", getProductoController);
+routerProducto.get(
+  "/:id",
+  getProductoValidation,
+  handleValidationErrors,
+  getProductoController
+);
 
-//Validaciones al crear un producto
 routerProducto.post(
   "/",
-  // [validationNameOrSurname("nombre"), validationPrice],
-  // authMiddleWare,
+  postProductoValidation,
+  handleValidationErrors,
+  authMiddleWare,
   postProductoController
 );
 
-routerProducto.put("/:id", authMiddleWare, putProductoController);
+routerProducto.put(
+  "/:id",
+  putProductoValidation,
+  handleValidationErrors,
+  authMiddleWare,
+  putProductoController
+);
 
-routerProducto.delete("/:id", authMiddleWare, deleteProductoController);
+routerProducto.delete(
+  "/:id",
+  deleteProductoValidation,
+  handleValidationErrors,
+  authMiddleWare,
+  deleteProductoController
+);
 
 routerProducto.delete(
   "/definitivo/:id",
+  deleteProductoValidation,
+  handleValidationErrors,
   authMiddleWare,
   deleteDefinitivoController
 );

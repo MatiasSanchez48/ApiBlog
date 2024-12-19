@@ -24,12 +24,14 @@ export const RegisterUser = async (
     fechaNacimiento: fechaNacimiento,
   });
   console.log(usuarioCreado);
-  
+
   return usuarioCreado;
 };
 
 export const LoginUser = async (username, password) => {
-  const usuario = await Usuario.findOne({ username });
+  const usuario = await Usuario.findOne({
+    $or: [{ username: identifier }, { email: identifier }],
+  });
   if (!usuario) {
     return -1;
   }

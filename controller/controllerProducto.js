@@ -24,9 +24,15 @@ import {
 export const getProductosController = async (req, res) => {
   try {
     const productos = await getProductosService();
-    res.status(200).json(productos);
+    res.status(200).json({
+      status: 200,
+      message: "productos obtenidos",
+      data: { productos },
+    });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
   }
 };
 
@@ -35,9 +41,15 @@ export const getProductosPaginadoController = async (req, res) => {
     const { page = 1, limit = 2 } = req.query;
 
     const productos = await getProductosPaginadosService(page, limit);
-    res.status(200).json(productos);
+    res.status(200).json({
+      status: 200,
+      message: "productos obtenidos",
+      data: { productos },
+    });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
   }
 };
 
@@ -62,10 +74,15 @@ export const getProductosFiltradosController = async (req, res) => {
       orderBy,
       order
     );
-    console.log(productos);
-    res.status(200).json(productos);
+    res.status(200).json({
+      status: 200,
+      message: "productos obtenidos",
+      data: { productos },
+    });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
   }
 };
 /**
@@ -78,9 +95,13 @@ export const getProductoController = async (req, res) => {
   try {
     const id = req.params.id;
     const producto = await getProductoService(id);
-    return res.status(200).json(producto);
+    return res
+      .status(200)
+      .json({ status: 200, message: "producto obtenido", producto: producto });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
   }
 };
 /**
@@ -95,14 +116,16 @@ export const postProductoController = async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty() || !req.body) {
       return res.status(400).json({
-        status: "error",
+        status: 400,
         message: "faltan datos",
         error: errors.array(),
       });
     }
     const { nombre, precio } = req.body;
     if (!nombre || !precio) {
-      return res.status(400).json({ error: "faltan datos. " + error.message });
+      return res
+        .status(400)
+        .json({ status: 400, error: "faltan datos. " + error.message });
     }
     const producto = await postProductoService({ nombre, precio });
     res.status(200).json({ mensaje: "producto creado", producto: producto });
@@ -122,9 +145,13 @@ export const putProductoController = async (req, res) => {
     const id = req.params.id;
     const { nombre, precio } = req.body;
     const producto = await putProductoService(id, nombre, precio);
-    res.status(200).json({ mensaje: "producto editado", producto: producto });
+    res
+      .status(200)
+      .json({ status: 200, mensaje: "producto editado", producto: producto });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
   }
 };
 
@@ -138,9 +165,15 @@ export const deleteProductoController = async (req, res) => {
   try {
     const id = req.params.id;
     const producto = await deleteProductoService(id);
-    res.status(200).json({ mensaje: "producto eliminado", producto: producto });
+    res.status(200).json({
+      status: 200,
+      mensaje: "producto eliminado",
+      producto: producto,
+    });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
   }
 };
 
@@ -154,10 +187,14 @@ export const deleteDefinitivoController = async (req, res) => {
   try {
     const id = req.params.id;
     const producto = await deleteDefinitivoService(id);
-    return res
-      .status(200)
-      .json({ mensaje: "producto eliminado definitivamente" });
+    return res.status(200).json({
+      status: 200,
+      mensaje: "producto eliminado definitivamente",
+      producto: producto,
+    });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res
+      .status(500)
+      .json({ status: 500, error: error.message, data: {} });
   }
 };

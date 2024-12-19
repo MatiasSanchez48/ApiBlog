@@ -8,6 +8,13 @@ import {
   deleteBlogController,
 } from "../controller/controllerBlog.js";
 import { authMiddleWare } from "../middleware/authMiddleWare.js";
+import { handleValidationErrors } from "../middleware/validationMiddleWare.js";
+import {
+  getBlogValidation,
+  deleteBlogValidation,
+  postBlogValidation,
+  putBlogValidation,
+} from "../validations/validationsBlog.js";
 
 export const routerBlog = express.Router();
 
@@ -15,10 +22,33 @@ routerBlog.get("/", getBlogsController);
 
 routerBlog.get("/populado/:id", getBlogPopuladoController);
 
-routerBlog.get("/:id", getBlogController);
+routerBlog.get(
+  "/:id",
+  getBlogValidation,
+  handleValidationErrors,
+  getBlogController
+);
 
-routerBlog.post("/", authMiddleWare, postBlogController);
+routerBlog.post(
+  "/",
+  postBlogValidation,
+  handleValidationErrors,
+  authMiddleWare,
+  postBlogController
+);
 
-routerBlog.put("/:id", authMiddleWare, putBlogController);
+routerBlog.put(
+  "/:id",
+  putBlogValidation,
+  handleValidationErrors,
+  authMiddleWare,
+  putBlogController
+);
 
-routerBlog.delete("/:id", authMiddleWare, deleteBlogController);
+routerBlog.delete(
+  "/:id",
+  deleteBlogValidation,
+  handleValidationErrors,
+  authMiddleWare,
+  deleteBlogController
+);

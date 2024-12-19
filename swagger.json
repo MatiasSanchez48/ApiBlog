@@ -1,31 +1,457 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "API",
-    "version": "1.0.0",
-    "description": "Api simple de blogs"
+    "title": "API CRUD | ABMC",
+    "description": "API para gestionar productos, blogs, usuarios y autores.",
+    "version": "1.0.0"
   },
   "paths": {
+    "/productos": {
+      "get": {
+        "tags": ["Productos"],
+        "summary": "Obtener todos los productos",
+        "operationId": "getProductos",
+        "responses": {
+          "200": {
+            "description": "Productos obtenidos",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 200,
+                  "message": "productos obtenidos",
+                  "data": {
+                    "productos": [
+                      {
+                        "id": "1",
+                        "nombre": "Producto 1",
+                        "precio": 100
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error en el servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Productos"],
+        "summary": "Crear un nuevo producto",
+        "operationId": "postProducto",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Token de acceso ",
+            "schema": {
+              "type": "string",
+              "example": "<your-token-here>"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Datos del nuevo producto",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nombre": {
+                    "type": "string"
+                  },
+                  "precio": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Producto creado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "mensaje": "producto creado",
+                  "producto": {
+                    "id": "1",
+                    "nombre": "Producto 1",
+                    "precio": 100
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Datos incompletos"
+          },
+          "500": {
+            "description": "Error en el servidor"
+          }
+        }
+      }
+    },
+    "/productos/{id}": {
+      "get": {
+        "tags": ["Productos"],
+        "summary": "Obtener un producto por ID",
+        "operationId": "getProducto",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID del producto",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Producto obtenido",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 200,
+                  "message": "producto obtenido",
+                  "producto": {
+                    "id": "1",
+                    "nombre": "Producto 1",
+                    "precio": 100
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error en el servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Productos"],
+        "summary": "Editar un producto existente",
+        "operationId": "putProducto",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID del producto",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Token de acceso ",
+            "schema": {
+              "type": "string",
+              "example": "<your-token-here>"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Datos del producto a editar",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nombre": {
+                    "type": "string"
+                  },
+                  "precio": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Producto editado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 200,
+                  "mensaje": "producto editado",
+                  "producto": {
+                    "id": "1",
+                    "nombre": "Producto 1",
+                    "precio": 100
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error en el servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Productos"],
+        "summary": "Eliminar un producto",
+        "operationId": "deleteProducto",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID del producto",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Token de acceso ",
+            "schema": {
+              "type": "string",
+              "example": "<your-token-here>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Producto eliminado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 200,
+                  "mensaje": "producto eliminado",
+                  "producto": {
+                    "id": "1",
+                    "nombre": "Producto 1",
+                    "precio": 100
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error en el servidor"
+          }
+        }
+      }
+    },
+    "/productos/paginado": {
+      "get": {
+        "tags": ["Productos"],
+        "summary": "Obtener productos paginados",
+        "operationId": "getProductosPaginados",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Número de página",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Número de productos por página",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 2
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Productos obtenidos",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 200,
+                  "message": "productos obtenidos",
+                  "data": {
+                    "productos": [
+                      {
+                        "id": "1",
+                        "nombre": "Producto 1",
+                        "precio": 100
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error en el servidor"
+          }
+        }
+      }
+    },
+    "/productos/filtrado": {
+      "get": {
+        "tags": ["Productos"],
+        "summary": "Obtener productos filtrados",
+        "operationId": "getProductosFiltrados",
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "query",
+            "description": "Filtrar productos por nombre",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "precioMin",
+            "in": "query",
+            "description": "Filtrar productos por precio mínimo",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "precioMax",
+            "in": "query",
+            "description": "Filtrar productos por precio máximo",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "description": "Ordenar productos por un campo específico",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Orden de los productos (asc/desc)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["asc", "desc"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Productos filtrados obtenidos",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 200,
+                  "message": "productos obtenidos",
+                  "data": {
+                    "productos": [
+                      {
+                        "id": "1",
+                        "nombre": "Producto 1",
+                        "precio": 100
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error en el servidor"
+          }
+        }
+      }
+    },
+    "/productos/definitivo/{id}": {
+      "delete": {
+        "tags": ["Productos"],
+        "summary": "Eliminar definitivamente un producto",
+        "operationId": "deleteDefinitivoProducto",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID del producto",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Token de acceso ",
+            "schema": {
+              "type": "string",
+              "example": "<your-token-here>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Producto eliminado definitivamente",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 200,
+                  "mensaje": "producto eliminado definitivamente",
+                  "producto": {
+                    "id": "1",
+                    "nombre": "Producto 1",
+                    "precio": 100
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error en el servidor"
+          }
+        }
+      }
+    },
     "/blog": {
       "get": {
         "tags": ["Blog"],
-        "summary": "Obtiene todos los blogs",
+        "summary": "Obtener todos los blogs",
         "operationId": "getBlogs",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Blogs obtenidos correctamente",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "status": {
-                      "type": "string",
-                      "example": "success"
+                      "type": "integer",
+                      "example": 200
                     },
                     "message": {
                       "type": "string",
-                      "example": "Productos encontrados"
+                      "example": "blogs obtenidos"
                     },
                     "data": {
                       "type": "object",
@@ -37,33 +463,24 @@
                             "properties": {
                               "id": {
                                 "type": "string",
-                                "format": "uuid",
-                                "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
+                                "example": "1"
                               },
                               "titulo": {
                                 "type": "string",
-                                "example": "Titulo del blog"
-                              },
-                              "descripcion": {
-                                "type": "string",
-                                "example": "Descripcion del blog"
+                                "example": "Mi primer blog"
                               },
                               "contenido": {
                                 "type": "string",
-                                "example": "Contenido del blog"
+                                "example": "Este es el contenido de mi primer blog"
                               },
-                              "imagen": {
+                              "autor": {
                                 "type": "string",
-                                "example": "Imagen del blog"
+                                "example": "Juan Pérez"
                               },
-                              "fechaPublicacion": {
+                              "fecha": {
                                 "type": "string",
-                                "format": "date-time",
-                                "example": "2021-01-01T00:00:00.000Z"
-                              },
-                              "isHabilitado": {
-                                "type": "boolean",
-                                "example": true
+                                "format": "date",
+                                "example": "2024-12-19"
                               }
                             }
                           }
@@ -76,36 +493,16 @@
             }
           },
           "500": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "example": "error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "example": "Error al obtener los blogs"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {}
-                    }
-                  }
-                }
-              }
-            }
+            "description": "Error interno del servidor"
           }
         }
       },
       "post": {
         "tags": ["Blog"],
-        "summary": "Crea un blog",
-        "operationId": "createBlog",
+        "summary": "Crear un nuevo blog",
+        "operationId": "postBlog",
         "requestBody": {
+          "description": "Crea un nuevo blog. Requiere los campos: titulo, descripcion, contenido, imagen, autor.",
           "required": true,
           "content": {
             "application/json": {
@@ -114,80 +511,81 @@
                 "properties": {
                   "titulo": {
                     "type": "string",
-                    "example": "hola"
+                    "description": "Título del blog"
                   },
                   "descripcion": {
                     "type": "string",
-                    "example": "descripcion"
+                    "description": "Descripción breve del blog"
                   },
                   "contenido": {
                     "type": "string",
-                    "example": "contenido"
+                    "description": "Contenido del blog"
                   },
                   "imagen": {
                     "type": "string",
-                    "example": "imagen"
+                    "description": "URL o path de la imagen asociada al blog"
                   },
-                  "isHabilitado": {
-                    "type": "boolean",
-                    "example": true
+                  "autor": {
+                    "type": "string",
+                    "description": "ID del autor del blog"
                   }
-                }
+                },
+                "required": [
+                  "titulo",
+                  "descripcion",
+                  "contenido",
+                  "imagen",
+                  "autor"
+                ]
               }
             }
           }
         },
         "responses": {
-          "201": {
-            "description": "OK",
+          "200": {
+            "description": "Blog creado exitosamente",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "status": {
-                      "type": "string",
-                      "example": "success"
+                      "type": "integer",
+                      "example": 200
                     },
                     "message": {
                       "type": "string",
-                      "example": "Blog creado"
+                      "example": "blog creado"
                     },
                     "data": {
                       "type": "object",
                       "properties": {
-                        "blog": {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "string",
-                              "format": "uuid",
-                              "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
-                            },
-                            "titulo": {
-                              "type": "string",
-                              "example": "Titulo del blog"
-                            },
-                            "descripcion": {
-                              "type": "string",
-                              "example": "Descripcion del blog"
-                            },
-                            "contenido": {
-                              "type": "string",
-                              "example": "Contenido del blog"
-                            },
-                            "imagen": {
-                              "type": "string",
-                              "example": "Imagen del blog"
-                            },
-                            "fechaPublicacion": {
-                              "type": "string",
-                              "format": "date-time",
-                              "example": "2021-01-01T00:00:00.000Z"
-                            },
-                            "isHabilitado": {
-                              "type": "boolean",
-                              "example": true
+                        "blogs": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "1"
+                              },
+                              "titulo": {
+                                "type": "string",
+                                "example": "Mi primer blog"
+                              },
+                              "contenido": {
+                                "type": "string",
+                                "example": "Este es el contenido de mi primer blog"
+                              },
+                              "autor": {
+                                "type": "string",
+                                "example": "Juan Pérez"
+                              },
+                              "fecha": {
+                                "type": "string",
+                                "format": "date",
+                                "example": "2024-12-19"
+                              }
                             }
                           }
                         }
@@ -197,14 +595,66 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Faltan datos en la solicitud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 400
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "faltan datos"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "No autorizado, token de acceso no válido o expirado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 401
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Token expired"
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Token de acceso ",
+            "schema": {
+              "type": "string",
+              "example": "<your-token-here>"
+            }
+          }
+        ]
       }
     },
     "/blog/{id}": {
       "get": {
         "tags": ["Blog"],
-        "summary": "Obtiene un blog",
+        "summary": "Obtener un blog por ID",
         "operationId": "getBlog",
         "parameters": [
           {
@@ -212,63 +662,55 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid",
-              "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
+              "type": "string"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "producto encontrado",
+            "description": "Blog obtenido correctamente",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "status": {
-                      "type": "string",
-                      "example": "success"
+                      "type": "integer",
+                      "example": 200
                     },
                     "message": {
                       "type": "string",
-                      "example": "Blog encontrado"
+                      "example": "blog obtenido"
                     },
                     "data": {
                       "type": "object",
                       "properties": {
-                        "blog": {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "string",
-                              "format": "uuid",
-                              "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
-                            },
-                            "titulo": {
-                              "type": "string",
-                              "example": "Titulo del blog"
-                            },
-                            "descripcion": {
-                              "type": "string",
-                              "example": "Descripcion del blog"
-                            },
-                            "contenido": {
-                              "type": "string",
-                              "example": "Contenido del blog"
-                            },
-                            "imagen": {
-                              "type": "string",
-                              "example": "Imagen del blog"
-                            },
-                            "fechaPublicacion": {
-                              "type": "string",
-                              "format": "date-time",
-                              "example": "2021-01-01T00:00:00.000Z"
-                            },
-                            "isHabilitado": {
-                              "type": "boolean",
-                              "example": true
+                        "blogs": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "1"
+                              },
+                              "titulo": {
+                                "type": "string",
+                                "example": "Mi primer blog"
+                              },
+                              "contenido": {
+                                "type": "string",
+                                "example": "Este es el contenido de mi primer blog"
+                              },
+                              "autor": {
+                                "type": "string",
+                                "example": "Juan Pérez"
+                              },
+                              "fecha": {
+                                "type": "string",
+                                "format": "date",
+                                "example": "2024-12-19"
+                              }
                             }
                           }
                         }
@@ -279,60 +721,38 @@
               }
             }
           },
-          "400": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "example": "error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "example": "Blog no encontrado"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {}
-                    }
-                  }
-                }
-              }
-            }
+          "404": {
+            "description": "Blog no encontrado"
           },
           "500": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "example": "error"
-                    },
-                    "message": {
-                      "type": "string",
-                      "example": "Error interno del servidor"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {}
-                    }
-                  }
-                }
-              }
-            }
+            "description": "Error interno del servidor"
           }
         }
       },
       "put": {
         "tags": ["Blog"],
-        "summary": "Actualiza un blog",
-        "operationId": "updateBlog",
+        "summary": "Actualizar un blog",
+        "operationId": "putBlog",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Token de acceso ",
+            "schema": {
+              "type": "string",
+              "example": "<your-token-here>"
+            }
+          }
+        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -340,105 +760,97 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "titulo": {
-                    "type": "string",
-                    "example": "Titulo del blog"
+                  "status": {
+                    "type": "integer",
+                    "example": 200
                   },
-                  "descripcion": {
+                  "message": {
                     "type": "string",
-                    "example": "Descripcion del blog"
+                    "example": "blog editado"
                   },
-                  "contenido": {
-                    "type": "string",
-                    "example": "Contenido del blog"
-                  },
-                  "imagen": {
-                    "type": "string",
-                    "example": "Imagen del blog"
-                  },
-                  "fechaPublicacion": {
-                    "type": "string",
-                    "format": "date-time",
-                    "example": "2021-01-01T00:00:00.000Z"
-                  },
-                  "isHabilitado": {
-                    "type": "boolean",
-                    "example": true
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "blogs": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "example": "1"
+                            },
+                            "titulo": {
+                              "type": "string",
+                              "example": "Mi primer blog"
+                            },
+                            "contenido": {
+                              "type": "string",
+                              "example": "Este es el contenido de mi primer blog"
+                            },
+                            "autor": {
+                              "type": "string",
+                              "example": "Juan Pérez"
+                            },
+                            "fecha": {
+                              "type": "string",
+                              "format": "date",
+                              "example": "2024-12-19"
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
             }
           }
         },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid",
-              "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
-            }
-          }
-        ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Blog actualizado correctamente",
             "content": {
-              "delete": {
-                "tags": ["Blog"],
-                "summary": "Modifica un blog",
-                "operationId": "updateBlog",
-                "responses": {
-                  "200": {
-                    "description": "OK",
-                    "content": {
-                      "application/json": {
-                        "schema": {
-                          "type": "object",
-                          "properties": {
-                            "status": {
-                              "type": "string",
-                              "example": "success"
-                            },
-                            "message": {
-                              "type": "string",
-                              "example": "Blog actualizado"
-                            },
-                            "data": {
-                              "type": "object",
-                              "properties": {
-                                "id": {
-                                  "type": "string",
-                                  "format": "uuid",
-                                  "example": "a2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6"
-                                },
-                                "titulo": {
-                                  "type": "string",
-                                  "example": "Titulo del blog"
-                                },
-                                "descripcion": {
-                                  "type": "string",
-                                  "example": "Descripcion del blog"
-                                },
-                                "contenido": {
-                                  "type": "string",
-                                  "example": "Contenido del blog"
-                                },
-                                "imagen": {
-                                  "type": "string",
-                                  "example": "Imagen del blog"
-                                },
-                                "fechaPublicacion": {
-                                  "type": "string",
-                                  "format": "date-time",
-                                  "example": "2021-01-01T00:00:00.000Z"
-                                },
-                                "isHabilitado": {
-                                  "type": "boolean",
-                                  "example": true
-                                }
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "blog editado"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "blogs": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "1"
+                              },
+                              "titulo": {
+                                "type": "string",
+                                "example": "Mi primer blog"
+                              },
+                              "contenido": {
+                                "type": "string",
+                                "example": "Este es el contenido de mi primer blog"
+                              },
+                              "autor": {
+                                "type": "string",
+                                "example": "Juan Pérez"
+                              },
+                              "fecha": {
+                                "type": "string",
+                                "format": "date",
+                                "example": "2024-12-19"
                               }
                             }
                           }
@@ -451,55 +863,415 @@
             }
           },
           "400": {
-            "description": "OK",
+            "description": "Datos incorrectos"
+          },
+          "500": {
+            "description": "Error interno del servidor"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": ["Blog"],
+        "summary": "Eliminar un blog",
+        "operationId": "deleteBlog",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Token de acceso ",
+            "schema": {
+              "type": "string",
+              "example": "<your-token-here>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Blog eliminado correctamente",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "status": {
-                      "type": "string",
-                      "example": "error"
+                      "type": "integer",
+                      "example": 200
                     },
                     "message": {
                       "type": "string",
-                      "example": "Blog no encontrado"
+                      "example": "blog eliminado"
                     },
                     "data": {
                       "type": "object",
-                      "properties": {}
+                      "properties": {
+                        "blogs": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "1"
+                              },
+                              "titulo": {
+                                "type": "string",
+                                "example": "Mi primer blog"
+                              },
+                              "contenido": {
+                                "type": "string",
+                                "example": "Este es el contenido de mi primer blog"
+                              },
+                              "autor": {
+                                "type": "string",
+                                "example": "Juan Pérez"
+                              },
+                              "fecha": {
+                                "type": "string",
+                                "format": "date",
+                                "example": "2024-12-19"
+                              }
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
               }
             }
           },
+          "404": {
+            "description": "Blog no encontrado"
+          },
           "500": {
-            "description": "OK",
+            "description": "Error interno del servidor"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Iniciar sesión",
+        "description": "Permite que los usuarios inicien sesión proporcionando su nombre de usuario y contraseña.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "description": "El nombre de usuario del usuario."
+                  },
+                  "password": {
+                    "type": "string",
+                    "description": "La contraseña del usuario."
+                  }
+                },
+                "required": ["username", "password"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Inicio de sesión exitoso",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "status": {
-                      "type": "string",
-                      "example": "error"
+                      "type": "integer",
+                      "example": 200
                     },
                     "message": {
                       "type": "string",
-                      "example": "Error interno del servidor"
+                      "example": "sesión iniciada"
                     },
                     "data": {
                       "type": "object",
-                      "properties": {}
+                      "properties": {
+                        "accessToken": {
+                          "type": "string",
+                          "description": "El token de acceso generado."
+                        },
+                        "refreshToken": {
+                          "type": "string",
+                          "description": "El token de refresco generado."
+                        }
+                      }
                     }
                   }
                 }
               }
             }
+          },
+          "400": {
+            "description": "Credenciales incorrectas"
+          },
+          "500": {
+            "description": "Error al iniciar sesión"
           }
         }
       }
+    },
+    "/auth/register": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Registrar un usuario",
+        "description": "Permite registrar un nuevo usuario proporcionando los detalles de usuario.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "description": "El nombre de usuario del nuevo usuario."
+                  },
+                  "password": {
+                    "type": "string",
+                    "description": "La contraseña del nuevo usuario."
+                  },
+                  "email": {
+                    "type": "string",
+                    "description": "El correo electrónico del nuevo usuario."
+                  },
+                  "fechaNacimiento": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "La fecha de nacimiento del nuevo usuario."
+                  }
+                },
+                "required": ["username", "password", "email", "fechaNacimiento"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Usuario creado exitosamente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "usuario creado"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "usuarioCreado": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "username": {
+                              "type": "string"
+                            },
+                            "email": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "autor": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "nombre": {
+                              "type": "string"
+                            },
+                            "fechaNacimiento": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "El usuario ya existe"
+          },
+          "500": {
+            "description": "Error al crear el usuario"
+          }
+        }
+      }
+    },
+    "/auth/token": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Refrescar token",
+        "description": "Permite refrescar el token de acceso utilizando un token de refresco.",
+        "parameters": [
+          {
+            "name": "x-refresh-token",
+            "in": "header",
+            "required": true,
+            "description": "Token de refresco necesario para obtener el nuevo token de acceso.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Token refrescado exitosamente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "token refrescado"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "accessToken": {
+                          "type": "string",
+                          "description": "El nuevo token de acceso generado."
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Token no proporcionado o credenciales incorrectas"
+          },
+          "500": {
+            "description": "Error al refrescar el token"
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Error": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        },
+        "Producto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "nombre": {
+              "type": "string"
+            },
+            "precio": {
+              "type": "number",
+              "format": "float"
+            }
+          }
+        },
+        "Blog": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "titulo": {
+              "type": "string"
+            },
+            "descripcion": {
+              "type": "string"
+            },
+            "contenido": {
+              "type": "string"
+            },
+            "imagen": {
+              "type": "string"
+            },
+            "fechaPublicacion": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "isHabilitado": {
+              "type": "boolean"
+            }
+          }
+        },
+        "Usuario": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "username": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "fechaNacimiento": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "Authorization": []
+        }
+      ]
     }
   }
 }
