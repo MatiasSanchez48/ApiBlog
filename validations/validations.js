@@ -30,8 +30,6 @@ const validationState = () => {
 
 const validationBirthDate = () => {
   return body("fechaNacimiento")
-    .isDate()
-    .withMessage("Completa el campo con una fecha válida.")
     .custom((value) => {
       const inputDate = new Date(value);
       const currentDate = new Date();
@@ -40,7 +38,8 @@ const validationBirthDate = () => {
         return false;
       }
       return true; // Si pasa la validación, devolver true.
-    });
+    })
+    .withMessage("Completa el campo con una fecha válida.");
 };
 const validationUsernameOrEmail = () => {
   return body("username").custom((value) => {

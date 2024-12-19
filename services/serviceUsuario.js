@@ -15,22 +15,22 @@ export const RegisterUser = async (
   if (usuario) {
     return -1;
   }
+
   const passhash = await bcrypt.hash(password, 10);
   const usuarioCreado = await Usuario.create({
     id: crypto.randomUUID(),
     username: username,
     password: passhash,
     email: email,
-    fechaNacimiento: fechaNacimiento,
+    fechaNacimiento: new Date(fechaNacimiento),
   });
-  console.log(usuarioCreado);
 
   return usuarioCreado;
 };
 
 export const LoginUser = async (username, password) => {
   const usuario = await Usuario.findOne({
-    $or: [{ username: identifier }, { email: identifier }],
+    $or: [{ username: username }, { email: username }],
   });
   if (!usuario) {
     return -1;
@@ -48,9 +48,15 @@ export const LoginUser = async (username, password) => {
     username: usuario.username,
     id: usuario._id,
   });
-  const usuarioActualizado = await Usuario.findOneAndUpdate({ username });
-
-  Usuario.updateOne({ _id: usuarioActualizado._id }, usuario);
+  const usuarioActualizado = await Usuario.findOneAndUpdate(
+    { _id: usuario._id },
+    { new: true }
+  );
+  if (!usuarioActualizado) {
+    return res
+      .status(500)
+      .json({ status: 500, message: "Error al actualizar usuario" });
+  }
   return { accessToken, refreshToken };
 };
 

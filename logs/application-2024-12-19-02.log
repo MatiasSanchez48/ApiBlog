@@ -283,3 +283,91 @@
 {"level":"info","message":"GET /docs/favicon-32x32.png","timestamp":"2024-12-19 02:24:57"}
 {"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:25:26"}
 {"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:25:26"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:45:43"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:45:44"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:48:48"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:48:49"}
+{"level":"info","message":"GET /autores","timestamp":"2024-12-19 02:49:04"}
+{"level":"info","message":"POST /auth/register","timestamp":"2024-12-19 02:49:11"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:50:31"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:50:32"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:50:34"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:50:34"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:50:40"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:50:41"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:50:42"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:50:42"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:50:45"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:50:45"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:50:46"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:50:46"}
+{"level":"info","message":"POST /auth/register","timestamp":"2024-12-19 02:50:48"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:51:05"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:51:05"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:51:35"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:51:35"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:51:37"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:51:37"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:51:39"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:51:39"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:51:40"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:51:41"}
+{"level":"info","message":"POST /auth/register","timestamp":"2024-12-19 02:51:42"}
+{"level":"info","message":"POST /auth/register","timestamp":"2024-12-19 02:51:52"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:52:05"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:52:22"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:52:23"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:52:25"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:52:25"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:52:45"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:52:45"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:52:47"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:52:57"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:54:03"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:54:06"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:54:46"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:54:47"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:54:48"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:54:48"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:55:11"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:55:11"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:55:13"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:55:13"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:55:15"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:55:15"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:55:18"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:55:19"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:55:34"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:55:34"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:55:38"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:55:39"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:55:39"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:55:40"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:55:42"}
+{"level":"info","message":"GET /autores","timestamp":"2024-12-19 02:55:45"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:55:55"}
+{"level":"info","message":"POST /auth/register","timestamp":"2024-12-19 02:56:54"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:57:01"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:57:06"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:57:08"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:57:09"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:57:10"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:57:12"}
+{"level":"info","message":"POST /blog/","timestamp":"2024-12-19 02:57:54"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:58:02"}
+{"level":"info","message":"POST /blog/","timestamp":"2024-12-19 02:58:09"}
+{"level":"info","message":"Example app listening on port: 3000","timestamp":"2024-12-19 02:59:22"}
+{"level":"info","message":"conectado a la base de datos","timestamp":"2024-12-19 02:59:23"}
+{"level":"info","message":"POST /blog/","timestamp":"2024-12-19 02:59:23"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:59:27"}
+{"level":"info","message":"POST /blog/","timestamp":"2024-12-19 02:59:36"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:59:41"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:59:41"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:59:42"}
+{"level":"info","message":"POST /blog/","timestamp":"2024-12-19 02:59:50"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:59:53"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:59:55"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:59:55"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:59:56"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:59:57"}
+{"level":"info","message":"POST /auth/login","timestamp":"2024-12-19 02:59:57"}

@@ -3,7 +3,7 @@ import AutorModel from "../model/modelAutores.js";
 
 export const getBlogsService = async () => {
   try {
-    const blogs = await BlogModel.find({ isHabilitado: true });
+    const blogs = await BlogModel.find({ isHabilitado: true }).populate("autor");
     if (blogs.length === 0) {
       return [];
     }
@@ -16,7 +16,7 @@ export const getBlogsService = async () => {
 };
 export const getBlogService = async (id) => {
   try {
-    const blog = await BlogModel.findOne({ id: id });
+    const blog = await BlogModel.findOne({ id: id }).populate("autor");
     if (!blog) {
       return res
         .status(404)
@@ -92,7 +92,7 @@ export const putBlogService = async (
       {
         new: true,
       }
-    );
+    ).populate("autor");
     if (!blog) {
       return res
         .status(404)
@@ -111,7 +111,7 @@ export const deleteBlogService = async (id) => {
       { id: id },
       { isHabilitado: false },
       { new: true }
-    );
+    ).populate("autor");
     if (!blog) {
       return res
         .status(404)

@@ -6,8 +6,9 @@ const JWT_ACCESS_EXPIRED = process.env.JWT_ACCESS_EXPIRED;
 const JWT_REFRESH_EXPIRED = process.env.JWT_REFRESH_EXPIRED;
 
 export const generateAccessToken = (payload) => {
+  console.log("JWT_ACCESS_EXPIRED:", JWT_ACCESS_EXPIRED);
   return jwt.sign(payload, JWT_ACCESS_SECRET, {
-    expiresIn: JWT_ACCESS_EXPIRED || "1h",
+    expiresIn: JWT_ACCESS_EXPIRED || "12h",
   });
 };
 

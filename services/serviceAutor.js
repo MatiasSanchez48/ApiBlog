@@ -55,7 +55,6 @@ export const postAutorService = async (autorData) => {
 };
 export const putAutorService = async (id, autor) => {
   try {
-    console.log(id, autor);
 
     const autorModificado = await AutorModel.findOneAndUpdate(
       { id: id },
