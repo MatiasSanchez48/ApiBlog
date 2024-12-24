@@ -55,7 +55,10 @@ export const postRegisterUserController = async (req, res) => {
 export const postLoginUserController = async (req, res) => {
   try {
     const { username, password } = req.body;
-    const { accessToken, refreshToken } = await LoginUser(username, password);
+    const { accessToken, refreshToken, usuarioActualizado } = await LoginUser(
+      username,
+      password
+    );
     if (!accessToken || !refreshToken) {
       return res.status(400).json({
         status: 400,
@@ -66,7 +69,7 @@ export const postLoginUserController = async (req, res) => {
     res.status(200).json({
       status: 200,
       message: "sesion iniciada",
-      data: { accessToken, refreshToken },
+      data: { accessToken, refreshToken, usuario: usuarioActualizado },
     });
   } catch (error) {
     res.status(500).json({

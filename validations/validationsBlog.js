@@ -10,8 +10,6 @@ export const postBlogValidation = [
   validationHeaderAuthorization(),
   validationNameOrSurname("titulo"),
   validationNameOrSurname("descripcion"),
-  validationNameOrSurname("contenido"),
-  validationNameOrSurname("imagen"),
   validationNameOrSurname("autor"),
 ];
 
@@ -20,8 +18,6 @@ export const putBlogValidation = [
   validationHeaderAuthorization(),
   validationNameOrSurname("titulo"),
   validationNameOrSurname("descripcion"),
-  validationNameOrSurname("contenido"),
-  validationNameOrSurname("imagen"),
 ];
 
 export const deleteBlogValidation = [

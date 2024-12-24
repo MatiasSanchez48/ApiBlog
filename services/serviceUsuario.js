@@ -57,13 +57,14 @@ export const LoginUser = async (username, password) => {
       .status(500)
       .json({ status: 500, message: "Error al actualizar usuario" });
   }
-  return { accessToken, refreshToken };
+  return { accessToken, refreshToken, usuarioActualizado };
 };
 
 export const RefreshToken = async (RefreshToken) => {
-  const user = jwt.verify(
+  const JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET || "unaclavesecreta";
+  const user = await jwt.verify(
     RefreshToken,
-    process.env.JWT_REFRESH_SECRET || "unaclavesecreta"
+    JWT_ACCESS_SECRET || "unaclavesecreta"
   );
   const userDB = await Usuario.findOne({ username: user.username });
   if (!userDB) {
