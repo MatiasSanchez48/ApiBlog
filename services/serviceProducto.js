@@ -72,7 +72,7 @@ export const getProductosFiltradosService = async (
       cantidadActual: Math.ceil(cantidad / limit),
       paginaActual: page,
     };
-
+ 
     return respuesta;
   } catch (error) {
     return new Error("Error al filtrar los productos: " + error.message);

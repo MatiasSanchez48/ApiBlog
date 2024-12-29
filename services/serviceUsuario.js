@@ -60,10 +60,10 @@ export const LoginUser = async (username, password) => {
   return { accessToken, refreshToken, usuarioActualizado };
 };
 
-export const RefreshToken = async (RefreshToken) => {
+export const RefreshToken = async (refreshToken) => {
   const JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET || "unaclavesecreta";
   const user = await jwt.verify(
-    RefreshToken,
+    refreshToken,
     JWT_ACCESS_SECRET || "unaclavesecreta"
   );
   const userDB = await Usuario.findOne({ username: user.username });

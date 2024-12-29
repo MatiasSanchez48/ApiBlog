@@ -4,13 +4,19 @@ import {
   postBlogService,
   putBlogService,
   deleteBlogService,
+  getBlogsByAutorService,
 } from "../services/serviceBlog.js";
 export const getBlogsController = async (req, res) => {
   try {
-    const blogs = await getBlogsService();
+    const { page = 1, limit = 2 } = req.query;
+    const respuesta = await getBlogsService(limit, page);
     return res
       .status(200)
-      .json({ status: 200, message: "blogs obtenidos", data: { blogs } });
+      .json({
+        status: 200,
+        message: "blogs obtenidos",
+        data: { respuesta: respuesta },
+      });
   } catch (error) {
     res.status(500).json({ status: 500, error: error.message, data: {} });
   }
@@ -22,6 +28,20 @@ export const getBlogController = async (req, res) => {
     res
       .status(200)
       .json({ status: 200, message: "blog obtenido", data: { blog } });
+  } catch (error) {
+    res.status(500).json({ status: 500, error: error.message, data: {} });
+  }
+};
+export const getBlogsIDAutorController = async (req, res) => {
+  try {
+    const idAutor = req.params.id;
+    const { page = 1, limit = 2 } = req.query;
+    const respuesta = await getBlogsByAutorService(limit, page, idAutor);
+    res.status(200).json({
+      status: 200,
+      message: "blog obtenido",
+      data: { respuesta: respuesta },
+    });
   } catch (error) {
     res.status(500).json({ status: 500, error: error.message, data: {} });
   }

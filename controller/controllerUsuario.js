@@ -81,9 +81,9 @@ export const postLoginUserController = async (req, res) => {
 };
 export const postRefreshUserController = async (req, res) => {
   try {
-    const Refresh = req.headers["x-refresh-token"];
+    const refreshToken = req.headers["x-refresh-token"];
 
-    if (!Refresh) {
+    if (!refreshToken) {
       return res.status(400).json({
         status: 400,
         message: "token no proporcionado",
@@ -91,7 +91,7 @@ export const postRefreshUserController = async (req, res) => {
       });
     }
 
-    const accessToken = await RefreshToken(Refresh);
+    const accessToken = await RefreshToken(refreshToken);
     if (!accessToken) {
       return res.status(400).json({
         status: 400,
@@ -108,7 +108,7 @@ export const postRefreshUserController = async (req, res) => {
     res.status(500).json({
       status: 500,
       message: "error al refrescar el token",
-      data: {},
+      data: { error: error.message },
     });
   }
 };

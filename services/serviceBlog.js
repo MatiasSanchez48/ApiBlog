@@ -1,13 +1,28 @@
 import BlogModel from "../model/modelBlog.js";
 import AutorModel from "../model/modelAutores.js";
 
-export const getBlogsService = async () => {
+export const getBlogsService = async (limit, page) => {
   try {
-    const blogs = await BlogModel.find({ isHabilitado: true }).populate("autor");
+    const skip = (page - 1) * limit;
+    const blogs = await BlogModel.find({ isHabilitado: true })
+      .populate("autor")
+      .skip(skip)
+      .limit(limit);
     if (blogs.length === 0) {
       return [];
     }
-    return blogs;
+    const cantidad = await BlogModel.find({
+      isHabilitado: true,
+    }).countDocuments();
+
+    const respuesta = {
+      blogs: blogs,
+      cantidad: cantidad,
+      cantidadActual: Math.ceil(cantidad / limit),
+      paginaActual: page,
+    };
+
+    return respuesta;
   } catch (error) {
     return res
       .status(500)
@@ -30,6 +45,7 @@ export const getBlogService = async (id) => {
       .json({ status: 500, error: error.message, data: {} });
   }
 };
+
 export const getBlogPopuladoService = (id) => {
   try {
     const blog = BlogModel.findById({ id: id }).populate("autor");
@@ -43,6 +59,42 @@ export const getBlogPopuladoService = (id) => {
     return res
       .status(500)
       .json({ status: 500, error: error.message, data: {} });
+  }
+};
+
+export const getBlogsByAutorService = async (limit, page, idAutor) => {
+  try {
+    const limite = Number(limit);
+    const skip = (page - 1) * limite;
+
+    const autorDB = await AutorModel.findOne({ id: idAutor });
+    if (!autorDB) {
+      throw new Error("El autor no existe en la base de datos.");
+    }
+
+    const allBlogs = await BlogModel.find({ isHabilitado: true }).populate(
+      "autor"
+    );
+
+    const blogsDelAutor = allBlogs.filter((blog) => blog.autor.id == idAutor);
+    const blogs = blogsDelAutor.slice(skip, skip + limite);
+
+    if (!blogs || blogs.length === 0) {
+      return [];
+    }
+
+    const cantidad = blogsDelAutor.length;
+
+    const respuesta = {
+      blogs: blogs,
+      cantidad: cantidad,
+      cantidadActual: Math.ceil(cantidad / limit),
+      paginaActual: page,
+    };
+
+    return respuesta;
+  } catch (error) {
+    throw new Error(error.message);
   }
 };
 export const postBlogService = async ({

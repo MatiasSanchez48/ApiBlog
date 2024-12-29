@@ -6,6 +6,7 @@ import {
   postBlogController,
   putBlogController,
   deleteBlogController,
+  getBlogsIDAutorController,
 } from "../controller/controllerBlog.js";
 import { authMiddleWare } from "../middleware/authMiddleWare.js";
 import { handleValidationErrors } from "../middleware/validationMiddleWare.js";
@@ -28,7 +29,12 @@ routerBlog.get(
   handleValidationErrors,
   getBlogController
 );
-
+routerBlog.get(
+  "/getbyautor/:id",
+  getBlogValidation,
+  handleValidationErrors,
+  getBlogsIDAutorController
+);
 routerBlog.post(
   "/",
   postBlogValidation,
