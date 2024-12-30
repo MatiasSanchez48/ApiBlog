@@ -3,12 +3,18 @@
 ---
 ## Archivo .env(prod)
 PORT=4000
+
 MONGO_URL="mongodb+srv://<usuario>:<contraseña>@<cluster>.mongodb.net/<base_de_datos>?retryWrites=true&w=majority"
 Usare mi db de mongo por las dudas no lo agrego.
+
 JWT_ACCESS_SECRET="tu_clave_secreta"
+
 JWT_REFRESH_SECRET="tu_clave_secreta"
+
 JWT_ACCESS_EXPIRED=43200     # 12 horas
+
 JWT_REFRESH_EXPIRED=2592000  # 30 días
+
 NODE_ENV="production"
 
 ---
