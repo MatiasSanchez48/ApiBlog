@@ -1,23 +1,14 @@
 ## _**API CRUD | ABMC**_
 
 ---
-
-# Puerto en el que se ejecutará la aplicación
+## Archivo .env(prod)
 PORT=4000
-
-# URL de conexión a la base de datos MongoDB
 MONGO_URL="mongodb+srv://<usuario>:<contraseña>@<cluster>.mongodb.net/<base_de_datos>?retryWrites=true&w=majority"
 Usare mi db de mongo por las dudas no lo agrego.
-
-# Secretos para la generación y verificación de JWT
 JWT_ACCESS_SECRET="tu_clave_secreta"
 JWT_REFRESH_SECRET="tu_clave_secreta"
-
-# Tiempos de expiración para los tokens (en segundos)
 JWT_ACCESS_EXPIRED=43200     # 12 horas
 JWT_REFRESH_EXPIRED=2592000  # 30 días
-
-# Entorno de ejecución (development, production, etc.)
 NODE_ENV="production"
 
 ---
